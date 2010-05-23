@@ -1,0 +1,4 @@
+Title : <%= @post.title %> <br />
+Text : <%= @post.text %> <br />
+<%= link_to 'Edit', edit_topic_post_path(@topic.id, @post) %> |
+<%= link_to 'Back', topic_posts_path(@topic.id) %>

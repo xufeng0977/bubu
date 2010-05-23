@@ -1,0 +1,60 @@
+<div id="content">
+  <div id="posts">
+
+  <table class="postList" summary="Topic : <%= @topic.title %>">
+    <caption>
+      <strong>Topic: <%= @topic.title%></strong>
+      <%= link_to 'New post', new_topic_post_path(@topic.id) %>
+    </caption>
+    <colgroup>
+      <col class="title" />
+	  <col class="title" />
+	  <col class="title" />
+      <col class="date" />
+    </colgroup>
+    <thead>
+      <tr>
+		<th scope="col">Viewed</th>
+		<th scope="col">Replies</th>
+        <th scope="col">Title</th>
+		<th	scope="col">Author</th>
+        <th scope="col">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% odd_or_even = 0 
+       for post in @posts 
+        odd_or_even = 1 - odd_or_even%>
+        <tr class="postLine<%=odd_or_even%>">
+		<td><%= post.viewed_count %></td>
+		<td><%= post.replies_count %></td>
+        <td><%= link_to post.title, topic_post_replies_path(@topic.id, post.id) %></td>
+		<td><%= post.user.login %></td>
+        <td><%= post.replied_at.to_formatted_s(:long)%></td> 
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <%= will_paginate @posts%>
+  <br />
+
+  <%= link_to 'New post', new_topic_post_path(@topic.id) %>
+  </div>
+</div>
+<div id="sidebar">
+  <div id="topTen">
+    <h3>Hotest Topics</h3>
+    <ol>
+      <li><a href="#">bubu</a><span>(234)</span></li>
+      <li><a href="#">david</a><span>(123)</span></li>
+    </ol>
+  </div>
+  <div id="latest">
+    <h3>Latest Topics</h3>
+    <ol>
+      <li><a href="#">bubu</a><span>(234)</span></li>
+      <li><a href="#">david</a><span>(123)</span></li>
+    </ol>
+  </div>
+</div>

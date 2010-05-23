@@ -1,0 +1,15 @@
+<h1>New post</h1>
+
+<% form_for :post, @post, :url => {:action => "create"} do |f| %>
+  <%= f.error_messages %>
+  <Label for "post_title"> Title: </Label>
+  <%= f.text_field :title %> <br />
+
+  <Label for "post_text"> Text: </Label>
+  <%= f.text_area :text %> <br />
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', topic_posts_path(@post.topic_id) %>

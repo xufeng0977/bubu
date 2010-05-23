@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Topics: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'main' %> 
+</head>
+<body>
+  <div id="wrapper">
+    <div id="top-nav">
+      <div id="top-nav-items">
+        <%= link_to 'Home', root_path %>
+      </div>
+      <div id="top-nav-user">
+      <% if logged_in? %>
+        <%= h current_user.login %>
+        <%= link_to 'Logout', logout_path %>
+      <% else %>
+        <%= link_to 'Login', login_path %>
+        <%= link_to 'Sign up', signup_path %>
+      <% end %>
+      </div>
+    </div>
+    <div id="header">
+      <h1 id="logo"><a href="<%= root_path%>"><%= image_tag "logo.png", :alt => "BuBu"%></a></h1>
+      <form id="search" action="">
+        <fieldset>
+          <legend class="hide">search</legend>
+          <label fro ="searchKey"> Topic: <input type="text" id="searchKey" name="searchKey"/></label><input type="submit" value="Search"/>
+        </fieldset>
+      </form>
+    </div>
+    <div id="main">
+      
+<p style="color: green"><%= flash[:notice] %></p>
+
+<%= yield  %>
+
+    </div>
+    <div id="footer">
+      <div id="footer-rights">
+        @2010 bubu.com, all rights reserved
+      </div>
+      <div id="footer-items">
+        <%= link_to "About", "#" %>
+        <%= link_to "Terms", "#" %>
+        <%= link_to "help", "#" %>
+        <%= link_to "Contact", "#" %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

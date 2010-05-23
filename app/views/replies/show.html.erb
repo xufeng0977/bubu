@@ -1,0 +1,3 @@
+Text : <%= @reply.text %>
+<%= link_to 'Edit', edit_topic_post_reply_path(@topic.id, @post.id, @reply) %> |
+<%= link_to 'Back', topic_post_replies_path(@topic.id, @post.id) %>

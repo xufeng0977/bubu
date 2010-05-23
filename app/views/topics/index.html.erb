@@ -1,0 +1,57 @@
+<% if not logged_in? %>
+  <div class="welcome">
+    <div class="reg">
+      <strong>BuBu</strong>
+      <div>
+        <b>500 topics</b>
+        <b>1000 users</b>
+        <br />
+      </div>
+      <br />
+      <a class="link-reg" href="<%= signup_path%>"><strong>Join us</strong>sign up</a>
+    </div>
+    <div class="login">
+      <% form_tag session_path do -%>
+      <p><%= label_tag 'login' %><br />
+      <%= text_field_tag 'login', @login %></p>
+
+      <p><%= label_tag 'password' %><br/>
+      <%= password_field_tag 'password', nil %></p>
+
+      <p><%= label_tag 'remember_me', 'Remember me' %>
+      <%= check_box_tag 'remember_me', '1', @remember_me %></p>
+
+      <p><%= submit_tag 'Log in' %></p>
+      <% end -%> 
+    </div>
+  </div>
+<% end %>
+<div id="content">
+  <div id="topics">
+    <h1>Listing topics</h1>
+
+    <table>
+      <tr>
+      </tr>
+
+    <% for topic in @topics %>
+      <tr>
+        <td><%= link_to topic.title, topic_posts_path(topic.id) %></td>
+      </tr>
+    <% end %>
+    </table>
+
+    <br />
+
+    <%= link_to 'New topic', new_topic_path %>
+  </div>
+</div>
+<div id="sidebar">
+    <div id="topTen">
+    <h3>Hotest Topics</h3>
+    <ol>
+      <li><a href="#">bubu</a><span>(234)</span></li>
+      <li><a href="#">david</a><span>(123)</span></li>
+    </ol>
+  </div>
+</div>
