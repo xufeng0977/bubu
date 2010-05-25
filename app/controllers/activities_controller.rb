@@ -2,7 +2,8 @@ class ActivitiesController < ApplicationController
   # GET /activities
   # GET /activities.xml
   def index
-    @activities = Activity.find(:all)
+    @user = User.find(params[:user_id])
+    @activities = Activity.paginate :page => params[:page], :conditions => {:user_id => params[:user_id]}, :order => "created_at", :per_page => 25
 
     respond_to do |format|
       format.html # index.html.erb

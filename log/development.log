@@ -17135,3 +17135,2098 @@ Rendering posts/index
   [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
   [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
 Completed in 89ms (View: 20, DB: 59) | 200 OK [http://localhost/topics/2/posts]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2010-05-25 20:11:03) [GET]
+  [4;36;1mSQL (33.6ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mTopic Load (50.3ms)[0m   [0;1mSELECT * FROM `topics` [0m
+Rendering template within layouts/application
+Rendering topics/index
+  [4;35;1mTopic Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `topics`[0m
+Completed in 138ms (View: 64, DB: 86) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-05-25 20:11:13) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"36b2bb42b8c6cafb23c39bf0bb951499e61f6687", "login"=>"xufeng0977", "password"=>"102938"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;36;1mUser Columns (28.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'xufeng0977') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Cookie set: auth_token=; path=/
+Redirected to /
+Completed in 67ms (DB: 30) | 302 Found [http://localhost/session]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2010-05-25 20:11:13) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mTopic Load (0.3ms)[0m   [0;1mSELECT * FROM `topics` [0m
+Rendering template within layouts/application
+Rendering topics/index
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTopic Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `topics`[0m
+Completed in 30ms (View: 20, DB: 4) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-25 20:11:16) [GET]
+  Parameters: {"topic_id"=>"2"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mTopic Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `topics`[0m
+  [4;35;1mTopic Load (1.2ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 2) [0m
+  [4;36;1mPost Load (1.5ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`topic_id` = '2') ORDER BY position LIMIT 0, 25[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 125ms (View: 92, DB: 9) | 200 OK [http://localhost/topics/2/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-05-25 20:11:18) [GET]
+  Parameters: {"topic_id"=>"2"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mPost Columns (5.8ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Rendering template within layouts/application
+Rendering posts/new
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 96ms (View: 20, DB: 8) | 200 OK [http://localhost/topics/2/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-05-25 20:11:24) [POST]
+  Parameters: {"topic_id"=>"2", "commit"=>"Create", "authenticity_token"=>"36b2bb42b8c6cafb23c39bf0bb951499e61f6687", "post"=>{"text"=>"abrebrbarebraeb", "title"=>"sdfsdfbhabrearb"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPost Columns (30.1ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM `posts` WHERE (topic_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mPost Create (0.3ms)[0m   [0mINSERT INTO `posts` (`topic_id`, `updated_at`, `title`, `text`, `replied_at`, `replies_count`, `ip`, `user_id`, `position`, `viewed_count`, `created_at`) VALUES(2, '2010-05-25 20:11:24', 'sdfsdfbhabrearb', 'abrebrbarebraeb', '2010-05-25 20:11:24', 0, '127.0.0.1', 1, 4, 0, '2010-05-25 20:11:24')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Update (0.3ms)[0m   [0;1mUPDATE `posts` SET position = (position + 1) WHERE (topic_id = 2 AND position < 4) [0m
+  [4;35;1mPost Update (0.2ms)[0m   [0mUPDATE `posts` SET `position` = 1, `updated_at` = '2010-05-25 20:11:24' WHERE `id` = 5[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mActivity Columns (0.0ms)[0m   [0mMysql::Error: Table 'bubu_development.activities' doesn't exist: SHOW FIELDS FROM `activities`[0m
+
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'bubu_development.activities' doesn't exist: SHOW FIELDS FROM `activities`):
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract_adapter.rb:188:in `log'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/mysql_adapter.rb:310:in `execute'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/mysql_adapter.rb:441:in `columns'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/base.rb:1220:in `columns'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/base.rb:2841:in `attributes_from_column_definition_without_lock'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/locking/optimistic.rb:55:in `attributes_from_column_definition'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/base.rb:2281:in `initialize'
+    /app/controllers/application.rb:18:in `new'
+    /app/controllers/application.rb:18:in `create_activity'
+    /app/controllers/posts_controller.rb:57:in `create'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/mime_responds.rb:106:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/mime_responds.rb:106:in `respond_to'
+    /app/controllers/posts_controller.rb:54:in `create'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1256:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1256:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:617:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/session_management.rb:134:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:392:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_trace (36.4ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_request_and_response (1.0ms)
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (19.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (18.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTopics (20100425070224)
+Migrating to CreatePosts (20100425070250)
+Migrating to CreateReplies (20100425070311)
+Migrating to CreateUsers (20100429152616)
+Migrating to CreateActivities (20100524150115)
+  [4;36;1mSQL (90.2ms)[0m   [0;1mCREATE TABLE `activities` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `record_type` int(11), `record_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100524150115')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mdescribe `activities`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW KEYS FROM `activities`[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mSQL (3.2ms)[0m   [0mdescribe `posts`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW KEYS FROM `posts`[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mSHOW FIELDS FROM `replies`[0m
+  [4;36;1mSQL (27.7ms)[0m   [0;1mdescribe `replies`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW KEYS FROM `replies`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW FIELDS FROM `topics`[0m
+  [4;35;1mSQL (3.6ms)[0m   [0mdescribe `topics`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW KEYS FROM `topics`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSHOW KEYS FROM `users`[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-05-25 20:12:04) [POST]
+  Parameters: {"topic_id"=>"2", "commit"=>"Create", "authenticity_token"=>"36b2bb42b8c6cafb23c39bf0bb951499e61f6687", "post"=>{"text"=>"abrebrbarebraebdsfsdf", "title"=>"sdfsdfsdfbhabrearb"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPost Columns (28.6ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mUser Columns (273.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM `posts` WHERE (topic_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mPost Create (0.2ms)[0m   [0mINSERT INTO `posts` (`topic_id`, `updated_at`, `title`, `text`, `replied_at`, `replies_count`, `ip`, `user_id`, `position`, `viewed_count`, `created_at`) VALUES(2, '2010-05-25 20:12:04', 'sdfsdfsdfbhabrearb', 'abrebrbarebraebdsfsdf', '2010-05-25 20:12:04', 0, '127.0.0.1', 1, 5, 0, '2010-05-25 20:12:04')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Update (0.3ms)[0m   [0;1mUPDATE `posts` SET position = (position + 1) WHERE (topic_id = 2 AND position < 5) [0m
+  [4;35;1mPost Update (0.1ms)[0m   [0mUPDATE `posts` SET `position` = 1, `updated_at` = '2010-05-25 20:12:04' WHERE `id` = 6[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mActivity Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+
+
+NameError (undefined local variable or method `record' for #<PostsController:0x2289b80>):
+    /app/controllers/application.rb:21:in `create_activity'
+    /app/controllers/posts_controller.rb:57:in `create'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/mime_responds.rb:106:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/mime_responds.rb:106:in `respond_to'
+    /app/controllers/posts_controller.rb:54:in `create'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1256:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1256:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:617:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/session_management.rb:134:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:392:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_trace (32.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_request_and_response (1.0ms)
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-05-25 20:12:38) [POST]
+  Parameters: {"topic_id"=>"2", "commit"=>"Create", "authenticity_token"=>"36b2bb42b8c6cafb23c39bf0bb951499e61f6687", "post"=>{"text"=>"abrebrbarebraebdsfsdf", "title"=>"arger"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPost Columns (32.2ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM `posts` WHERE (topic_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mPost Create (0.2ms)[0m   [0mINSERT INTO `posts` (`topic_id`, `updated_at`, `title`, `text`, `replied_at`, `replies_count`, `ip`, `user_id`, `position`, `viewed_count`, `created_at`) VALUES(2, '2010-05-25 20:12:38', 'arger', 'abrebrbarebraebdsfsdf', '2010-05-25 20:12:38', 0, '127.0.0.1', 1, 6, 0, '2010-05-25 20:12:38')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Update (0.2ms)[0m   [0;1mUPDATE `posts` SET position = (position + 1) WHERE (topic_id = 2 AND position < 6) [0m
+  [4;35;1mPost Update (0.1ms)[0m   [0mUPDATE `posts` SET `position` = 1, `updated_at` = '2010-05-25 20:12:38' WHERE `id` = 7[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mActivity Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mActivity Create (0.2ms)[0m   [0mINSERT INTO `activities` (`record_type`, `updated_at`, `user_id`, `record_id`, `created_at`) VALUES(0, '2010-05-25 20:12:38', 1, 7, '2010-05-25 20:12:38')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to /topics/2/posts/7/replies
+Completed in 62ms (DB: 39) | 302 Found [http://localhost/topics/2/posts]
+
+
+Processing RepliesController#index (for 127.0.0.1 at 2010-05-25 20:12:38) [GET]
+  Parameters: {"topic_id"=>"2", "post_id"=>"7"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mPost Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load (1.5ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 7) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Update (0.2ms)[0m   [0;1mUPDATE `posts` SET `viewed_count` = 1, `updated_at` = '2010-05-25 20:12:38' WHERE `id` = 7[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTopic Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `topics`[0m
+  [4;35;1mTopic Load (1.3ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 2) [0m
+  [4;36;1mReply Load (0.4ms)[0m   [0;1mSELECT * FROM `replies` WHERE (`replies`.`post_id` = '7') LIMIT 0, 5[0m
+Rendering template within layouts/application
+Rendering replies/index
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 45ms (View: 20, DB: 9) | 200 OK [http://localhost/topics/2/posts/7/replies]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateActivities (20100524150115)
+  [4;36;1mSQL (3.9ms)[0m   [0;1mDROP TABLE `activities`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100524150115'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mdescribe `posts`[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSHOW KEYS FROM `posts`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `replies`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mdescribe `replies`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW KEYS FROM `replies`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW FIELDS FROM `topics`[0m
+  [4;36;1mSQL (50.0ms)[0m   [0;1mdescribe `topics`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW KEYS FROM `topics`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTopics (20100425070224)
+Migrating to CreatePosts (20100425070250)
+Migrating to CreateReplies (20100425070311)
+Migrating to CreateUsers (20100429152616)
+Migrating to CreateActivities (20100524150115)
+  [4;36;1mSQL (170.0ms)[0m   [0;1mCREATE TABLE `activities` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `record_type` varchar(255), `record_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100524150115')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mdescribe `activities`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW KEYS FROM `activities`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `posts`[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW KEYS FROM `posts`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `replies`[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mdescribe `replies`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW KEYS FROM `replies`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `topics`[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mdescribe `topics`[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW KEYS FROM `topics`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW KEYS FROM `users`[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-25 20:14:41) [GET]
+  Parameters: {"topic_id"=>"2"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTopic Columns (4.9ms)[0m   [0mSHOW FIELDS FROM `topics`[0m
+  [4;36;1mTopic Load (1.1ms)[0m   [0;1mSELECT * FROM `topics` WHERE (`topics`.`id` = 2) [0m
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`topic_id` = '2') ORDER BY position LIMIT 0, 25[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;36;1mPost Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mUser Columns (42.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 88ms (View: 25, DB: 52) | 200 OK [http://localhost/topics/2/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-05-25 20:14:43) [GET]
+  Parameters: {"topic_id"=>"2"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mPost Columns (5.6ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Rendering template within layouts/application
+Rendering posts/new
+  [4;36;1mUser Columns (49.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 82ms (View: 17, DB: 57) | 200 OK [http://localhost/topics/2/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-05-25 20:14:47) [POST]
+  Parameters: {"topic_id"=>"2", "commit"=>"Create", "authenticity_token"=>"36b2bb42b8c6cafb23c39bf0bb951499e61f6687", "post"=>{"text"=>"aa", "title"=>"aa"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPost Columns (26.3ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM `posts` WHERE (topic_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mPost Create (0.2ms)[0m   [0mINSERT INTO `posts` (`topic_id`, `updated_at`, `title`, `text`, `replied_at`, `replies_count`, `ip`, `user_id`, `position`, `viewed_count`, `created_at`) VALUES(2, '2010-05-25 20:14:47', 'aa', 'aa', '2010-05-25 20:14:47', 0, '127.0.0.1', 1, 7, 0, '2010-05-25 20:14:47')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Update (0.3ms)[0m   [0;1mUPDATE `posts` SET position = (position + 1) WHERE (topic_id = 2 AND position < 7) [0m
+  [4;35;1mPost Update (0.1ms)[0m   [0mUPDATE `posts` SET `position` = 1, `updated_at` = '2010-05-25 20:14:47' WHERE `id` = 8[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mActivity Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mActivity Create (0.2ms)[0m   [0mINSERT INTO `activities` (`record_type`, `updated_at`, `user_id`, `record_id`, `created_at`) VALUES('Post', '2010-05-25 20:14:47', 1, 8, '2010-05-25 20:14:47')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to /topics/2/posts/8/replies
+Completed in 56ms (DB: 33) | 302 Found [http://localhost/topics/2/posts]
+
+
+Processing RepliesController#index (for 127.0.0.1 at 2010-05-25 20:14:47) [GET]
+  Parameters: {"topic_id"=>"2", "post_id"=>"8"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mPost Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load (1.4ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 8) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Update (0.3ms)[0m   [0;1mUPDATE `posts` SET `viewed_count` = 1, `updated_at` = '2010-05-25 20:14:47' WHERE `id` = 8[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTopic Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `topics`[0m
+  [4;35;1mTopic Load (1.3ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 2) [0m
+  [4;36;1mReply Load (0.2ms)[0m   [0;1mSELECT * FROM `replies` WHERE (`replies`.`post_id` = '8') LIMIT 0, 5[0m
+Rendering template within layouts/application
+Rendering replies/index
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 106ms (View: 81, DB: 9) | 200 OK [http://localhost/topics/2/posts/8/replies]
+
+
+Processing ActivitiesController#index (for 127.0.0.1 at 2010-05-25 20:15:12) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (5.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mActivity Load (0.3ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`user_id` = '1') ORDER BY created_at LIMIT 0, 25[0m
+Rendering template within layouts/activities
+Rendering activities/index
+  [4;36;1mActivity Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+Completed in 32ms (View: 7, DB: 9) | 200 OK [http://localhost/users/1/activities/]
+
+
+Processing ActivitiesController#index (for 127.0.0.1 at 2010-05-25 20:16:09) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (4.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mActivity Load (0.3ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`user_id` = '1') ORDER BY created_at LIMIT 0, 25[0m
+Rendering template within layouts/application
+Rendering activities/index
+  [4;36;1mActivity Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 31ms (View: 12, DB: 7) | 200 OK [http://localhost/users/1/activities/]
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-05-25 20:16:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mActivity Columns (5.5ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mActivity Load (0.8ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering activities/show
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 30ms (View: 17, DB: 9) | 200 OK [http://localhost/activities/1]
+
+
+Processing ActivitiesController#index (for 127.0.0.1 at 2010-05-25 20:16:19) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/base.rb:1509:in `find_from_ids'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/base.rb:590:in `find'
+    /app/controllers/activities_controller.rb:5:in `index'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1256:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1256:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:617:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/session_management.rb:134:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:392:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_trace (35.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_request_and_response (0.9ms)
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2010-05-25 20:17:12) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mTopic Load (0.3ms)[0m   [0;1mSELECT * FROM `topics` [0m
+Rendering template within layouts/application
+Rendering topics/index
+  [4;35;1mUser Columns (5.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTopic Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `topics`[0m
+Completed in 31ms (View: 19, DB: 8) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-25 20:17:13) [GET]
+  Parameters: {"topic_id"=>"2"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mTopic Columns (4.1ms)[0m   [0;1mSHOW FIELDS FROM `topics`[0m
+  [4;35;1mTopic Load (1.1ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 2) [0m
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`topic_id` = '2') ORDER BY position LIMIT 0, 25[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mUser Columns (41.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 85ms (View: 27, DB: 50) | 200 OK [http://localhost/topics/2/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-05-25 20:17:15) [GET]
+  Parameters: {"topic_id"=>"2"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mPost Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Rendering template within layouts/application
+Rendering posts/new
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 97ms (View: 19, DB: 4) | 200 OK [http://localhost/topics/2/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-05-25 20:17:19) [POST]
+  Parameters: {"topic_id"=>"2", "commit"=>"Create", "authenticity_token"=>"36b2bb42b8c6cafb23c39bf0bb951499e61f6687", "post"=>{"text"=>"bb", "title"=>"bb"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPost Columns (36.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM `posts` WHERE (topic_id = 2) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO `posts` (`topic_id`, `updated_at`, `title`, `text`, `replied_at`, `replies_count`, `ip`, `user_id`, `position`, `viewed_count`, `created_at`) VALUES(2, '2010-05-25 20:17:19', 'bb', 'bb', '2010-05-25 20:17:19', 0, '127.0.0.1', 1, 8, 0, '2010-05-25 20:17:19')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Update (0.2ms)[0m   [0;1mUPDATE `posts` SET position = (position + 1) WHERE (topic_id = 2 AND position < 8) [0m
+  [4;35;1mPost Update (0.2ms)[0m   [0mUPDATE `posts` SET `position` = 1, `updated_at` = '2010-05-25 20:17:19' WHERE `id` = 9[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mActivity Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mActivity Create (0.2ms)[0m   [0mINSERT INTO `activities` (`record_type`, `updated_at`, `user_id`, `record_id`, `created_at`) VALUES('Post', '2010-05-25 20:17:19', 1, 9, '2010-05-25 20:17:19')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to /topics/2/posts/9/replies
+Completed in 66ms (DB: 43) | 302 Found [http://localhost/topics/2/posts]
+
+
+Processing RepliesController#index (for 127.0.0.1 at 2010-05-25 20:17:19) [GET]
+  Parameters: {"topic_id"=>"2", "post_id"=>"9"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mPost Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load (1.8ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 9) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Update (0.2ms)[0m   [0;1mUPDATE `posts` SET `viewed_count` = 1, `updated_at` = '2010-05-25 20:17:19' WHERE `id` = 9[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTopic Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `topics`[0m
+  [4;35;1mTopic Load (1.2ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 2) [0m
+  [4;36;1mReply Load (0.2ms)[0m   [0;1mSELECT * FROM `replies` WHERE (`replies`.`post_id` = '9') LIMIT 0, 5[0m
+Rendering template within layouts/application
+Rendering replies/index
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 43ms (View: 18, DB: 10) | 200 OK [http://localhost/topics/2/posts/9/replies]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-25 20:17:20) [GET]
+  Parameters: {"topic_id"=>"2"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTopic Columns (4.5ms)[0m   [0mSHOW FIELDS FROM `topics`[0m
+  [4;36;1mTopic Load (1.0ms)[0m   [0;1mSELECT * FROM `topics` WHERE (`topics`.`id` = 2) [0m
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`topic_id` = '2') ORDER BY position LIMIT 0, 25[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;36;1mPost Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 107ms (View: 88, DB: 10) | 200 OK [http://localhost/topics/2/posts]
+
+
+Processing ActivitiesController#index (for 127.0.0.1 at 2010-05-25 20:17:27) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (20.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mActivity Load (0.3ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`user_id` = '1') ORDER BY created_at LIMIT 0, 25[0m
+Rendering template within layouts/application
+Rendering activities/index
+  [4;36;1mActivity Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 50ms (View: 14, DB: 24) | 200 OK [http://localhost/users/1/activities/]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2010-05-25 20:23:50) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mTopic Load (0.3ms)[0m   [0;1mSELECT * FROM `topics` [0m
+Rendering template within layouts/application
+Rendering topics/index
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTopic Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `topics`[0m
+Completed in 28ms (View: 19, DB: 4) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-25 20:23:51) [GET]
+  Parameters: {"topic_id"=>"2"}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mTopic Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `topics`[0m
+  [4;35;1mTopic Load (2.3ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 2) [0m
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`topic_id` = '2') ORDER BY position LIMIT 0, 25[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 43ms (View: 25, DB: 8) | 200 OK [http://localhost/topics/2/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-25 20:25:55) [GET]
+  Parameters: {"topic_id"=>"2"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mTopic Columns (4.4ms)[0m   [0;1mSHOW FIELDS FROM `topics`[0m
+  [4;35;1mTopic Load (1.7ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 2) [0m
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`topic_id` = '2') ORDER BY position LIMIT 0, 25[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mUser Columns (42.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 87ms (View: 25, DB: 52) | 200 OK [http://localhost/topics/2/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-25 20:26:26) [GET]
+  Parameters: {"topic_id"=>"2"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mTopic Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `topics`[0m
+  [4;35;1mTopic Load (1.2ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 2) [0m
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`topic_id` = '2') ORDER BY position LIMIT 0, 25[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 41ms (View: 24, DB: 8) | 200 OK [http://localhost/topics/2/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-25 20:27:06) [GET]
+  Parameters: {"topic_id"=>"2"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mTopic Columns (5.9ms)[0m   [0;1mSHOW FIELDS FROM `topics`[0m
+  [4;35;1mTopic Load (1.0ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 2) [0m
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`topic_id` = '2') ORDER BY position LIMIT 0, 25[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mUser Columns (41.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 87ms (View: 26, DB: 51) | 200 OK [http://localhost/topics/2/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-25 20:42:42) [GET]
+  Parameters: {"topic_id"=>"2"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mTopic Columns (5.2ms)[0m   [0;1mSHOW FIELDS FROM `topics`[0m
+  [4;35;1mTopic Load (1.0ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 2) [0m
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`topic_id` = '2') ORDER BY position LIMIT 0, 25[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 113ms (View: 26, DB: 11) | 200 OK [http://localhost/topics/2/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-25 20:42:44) [GET]
+  Parameters: {"topic_id"=>"2"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mTopic Columns (5.2ms)[0m   [0;1mSHOW FIELDS FROM `topics`[0m
+  [4;35;1mTopic Load (1.1ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 2) [0m
+  [4;36;1mPost Load (1.7ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`topic_id` = '2') ORDER BY position LIMIT 0, 25[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mUser Columns (46.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 93ms (View: 26, DB: 57) | 200 OK [http://localhost/topics/2/posts]
+
+
+Processing ActivitiesController#index (for 127.0.0.1 at 2010-05-25 20:42:48) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (25.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mActivity Load (0.3ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`user_id` = '1') ORDER BY created_at LIMIT 0, 25[0m
+Rendering template within layouts/application
+Rendering activities/index
+  [4;35;1mActivity Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mPost Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (1.3ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 8) [0m
+  [4;36;1mTopic Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `topics`[0m
+  [4;35;1mTopic Load (1.2ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 2) [0m
+
+
+ActionView::TemplateError (undefined local variable or method `activitiy' for #<ActionView::Base:0x2343260>) on line #28 of app/views/activities/index.html.erb:
+25: 	when "Post"
+26: 		post = Post.find(activity.record_id)
+27: 		topic = post.topic %>
+28: 	<%= activitiy.created_at..strftime("%Y-%m-%d %H:%M:%S %p") %> created Post : <%=post.title%> under Topic : <%=topic.title%> 	
+29: 	<%
+30: 	when "Reply"
+31: 		reply = Reply.find(activity.record_id) 
+
+    app/views/activities/index.html.erb:28
+    app/views/activities/index.html.erb:19:in `each'
+    app/views/activities/index.html.erb:19
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable.rb:39:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable.rb:39:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_view/template.rb:73:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_view/base.rb:256:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_view/base.rb:369:in `_render_with_layout'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_view/base.rb:254:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1177:in `render_for_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:905:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/mime_responds.rb:135:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/mime_responds.rb:135:in `custom'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/mime_responds.rb:164:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/mime_responds.rb:164:in `respond'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/mime_responds.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/mime_responds.rb:158:in `respond'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/activities_controller.rb:8:in `index'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1256:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1256:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:617:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/session_management.rb:134:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:392:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:74:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:74:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_trace (39.4ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_request_and_response (0.9ms)
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing ActivitiesController#index (for 127.0.0.1 at 2010-05-25 20:43:55) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mActivity Load (0.3ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`user_id` = '1') ORDER BY created_at LIMIT 0, 25[0m
+Rendering template within layouts/application
+Rendering activities/index
+  [4;35;1mActivity Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mPost Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (1.4ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 8) [0m
+  [4;36;1mTopic Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `topics`[0m
+  [4;35;1mTopic Load (1.2ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 2) [0m
+
+
+ActionView::TemplateError (undefined local variable or method `activitiy' for #<ActionView::Base:0x22d1890>) on line #28 of app/views/activities/index.html.erb:
+25: 	when "Post"
+26: 		post = Post.find(activity.record_id)
+27: 		topic = post.topic %>
+28: 	<%= activitiy.created_at.strftime("%Y-%m-%d %H:%M:%S %p") %> created Post : <%=post.title%> under Topic : <%=topic.title%> 	
+29: 	<%
+30: 	when "Reply"
+31: 		reply = Reply.find(activity.record_id) 
+
+    app/views/activities/index.html.erb:28
+    app/views/activities/index.html.erb:19:in `each'
+    app/views/activities/index.html.erb:19
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable.rb:39:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable.rb:39:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_view/template.rb:73:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_view/base.rb:256:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_view/base.rb:369:in `_render_with_layout'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_view/base.rb:254:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1177:in `render_for_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:905:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/mime_responds.rb:135:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/mime_responds.rb:135:in `custom'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/mime_responds.rb:164:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/mime_responds.rb:164:in `respond'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/mime_responds.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/mime_responds.rb:158:in `respond'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/activities_controller.rb:8:in `index'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1256:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1256:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:617:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/session_management.rb:134:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:392:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:74:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:74:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_trace (39.5ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_request_and_response (1.1ms)
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing ActivitiesController#index (for 127.0.0.1 at 2010-05-25 20:44:36) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (27.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mActivity Load (0.3ms)[0m   [0;1mSELECT * FROM `activities` WHERE (`activities`.`user_id` = '1') ORDER BY created_at LIMIT 0, 25[0m
+Rendering template within layouts/application
+Rendering activities/index
+  [4;35;1mActivity Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mPost Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (1.9ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 8) [0m
+  [4;36;1mTopic Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `topics`[0m
+  [4;35;1mTopic Load (1.4ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 2) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 2) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 142ms (View: 93, DB: 38) | 200 OK [http://localhost/users/1/activities/]
+
+
+Processing ActivitiesController#index (for 127.0.0.1 at 2010-05-25 20:45:20) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (5.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mActivity Load (0.3ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`user_id` = '1') ORDER BY created_at LIMIT 0, 25[0m
+Rendering template within layouts/application
+Rendering activities/index
+  [4;36;1mActivity Columns (88.7ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mPost Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load (1.4ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 8) [0m
+  [4;35;1mTopic Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `topics`[0m
+  [4;36;1mTopic Load (1.2ms)[0m   [0;1mSELECT * FROM `topics` WHERE (`topics`.`id` = 2) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `topics` WHERE (`topics`.`id` = 2) [0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 141ms (View: 26, DB: 102) | 200 OK [http://localhost/users/1/activities/]
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2010-05-25 20:45:29) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mTopic Load (0.2ms)[0m   [0;1mSELECT * FROM `topics` [0m
+Rendering template within layouts/application
+Rendering topics/index
+  [4;35;1mUser Columns (5.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTopic Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `topics`[0m
+Completed in 31ms (View: 19, DB: 8) | 200 OK [http://localhost/]
+
+
+Processing TopicsController#new (for 127.0.0.1 at 2010-05-25 20:45:30) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mTopic Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `topics`[0m
+Rendering template within layouts/application
+Rendering topics/new
+Completed in 26ms (View: 10, DB: 4) | 200 OK [http://localhost/topics/new]
+
+
+Processing TopicsController#create (for 127.0.0.1 at 2010-05-25 20:45:37) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"36b2bb42b8c6cafb23c39bf0bb951499e61f6687", "topic"=>{"title"=>"naoinviorasnvoiqnoivnwklnv iorwnvoinowqvnlkwv"}}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTopic Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `topics`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTopic Create (0.2ms)[0m   [0mINSERT INTO `topics` (`updated_at`, `title`, `replies_count`, `ip`, `posts_count`, `user_id`, `viewed_count`, `created_at`) VALUES('2010-05-25 20:45:37', 'naoinviorasnvoiqnoivnwklnv iorwnvoinowqvnlkwv', 0, NULL, 0, 1, 0, '2010-05-25 20:45:37')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mActivity Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mActivity Create (0.3ms)[0m   [0mINSERT INTO `activities` (`record_type`, `updated_at`, `user_id`, `record_id`, `created_at`) VALUES('Topic', '2010-05-25 20:45:37', 1, 3, '2010-05-25 20:45:37')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to /topics/3/posts
+Completed in 30ms (DB: 7) | 302 Found [http://localhost/topics]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-05-25 20:45:37) [GET]
+  Parameters: {"topic_id"=>"3"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mTopic Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `topics`[0m
+  [4;36;1mTopic Load (1.3ms)[0m   [0;1mSELECT * FROM `topics` WHERE (`topics`.`id` = 3) [0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`topic_id` = '3') ORDER BY position LIMIT 0, 25[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 34ms (View: 19, DB: 6) | 200 OK [http://localhost/topics/3/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-05-25 20:45:40) [GET]
+  Parameters: {"topic_id"=>"3"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPost Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+Rendering template within layouts/application
+Rendering posts/new
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 28ms (View: 17, DB: 4) | 200 OK [http://localhost/topics/3/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-05-25 20:45:49) [POST]
+  Parameters: {"topic_id"=>"3", "commit"=>"Create", "authenticity_token"=>"36b2bb42b8c6cafb23c39bf0bb951499e61f6687", "post"=>{"text"=>"wcercwbyebebeb", "title"=>"ebeybeybernunrumrurmbyebetbeyb"}}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mPost Columns (33.4ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM `posts` WHERE (topic_id = 3) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mPost Create (0.2ms)[0m   [0;1mINSERT INTO `posts` (`topic_id`, `updated_at`, `title`, `text`, `replied_at`, `replies_count`, `ip`, `user_id`, `position`, `viewed_count`, `created_at`) VALUES(3, '2010-05-25 20:45:49', 'ebeybeybernunrumrurmbyebetbeyb', 'wcercwbyebebeb', '2010-05-25 20:45:49', 0, '127.0.0.1', 1, 1, 0, '2010-05-25 20:45:49')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Update (0.2ms)[0m   [0mUPDATE `posts` SET position = (position + 1) WHERE (topic_id = 3 AND position < 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mActivity Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `activities`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mActivity Create (0.2ms)[0m   [0mINSERT INTO `activities` (`record_type`, `updated_at`, `user_id`, `record_id`, `created_at`) VALUES('Post', '2010-05-25 20:45:49', 1, 10, '2010-05-25 20:45:49')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to /topics/3/posts/10/replies
+Completed in 62ms (DB: 39) | 302 Found [http://localhost/topics/3/posts]
+
+
+Processing RepliesController#index (for 127.0.0.1 at 2010-05-25 20:45:49) [GET]
+  Parameters: {"topic_id"=>"3", "post_id"=>"10"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mPost Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load (1.3ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 10) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Update (0.2ms)[0m   [0;1mUPDATE `posts` SET `viewed_count` = 1, `updated_at` = '2010-05-25 20:45:49' WHERE `id` = 10[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTopic Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `topics`[0m
+  [4;35;1mTopic Load (1.1ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 3) [0m
+  [4;36;1mReply Load (0.2ms)[0m   [0;1mSELECT * FROM `replies` WHERE (`replies`.`post_id` = '10') LIMIT 0, 5[0m
+Rendering template within layouts/application
+Rendering replies/index
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 46ms (View: 21, DB: 9) | 200 OK [http://localhost/topics/3/posts/10/replies]
+
+
+Processing RepliesController#new (for 127.0.0.1 at 2010-05-25 20:45:51) [GET]
+  Parameters: {"topic_id"=>"3", "post_id"=>"10"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mReply Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `replies`[0m
+  [4;36;1mTopic Columns (49.0ms)[0m   [0;1mSHOW FIELDS FROM `topics`[0m
+  [4;35;1mTopic Load (1.1ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 3) [0m
+  [4;36;1mPost Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (1.3ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 10) [0m
+Rendering template within layouts/application
+Rendering replies/new
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 87ms (View: 18, DB: 57) | 200 OK [http://localhost/topics/3/posts/10/replies/new]
+
+
+Processing RepliesController#create (for 127.0.0.1 at 2010-05-25 20:45:54) [POST]
+  Parameters: {"topic_id"=>"3", "commit"=>"Create", "reply"=>{"text"=>"eyjnernutrmtimir"}, "post_id"=>"10", "authenticity_token"=>"36b2bb42b8c6cafb23c39bf0bb951499e61f6687"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mReply Columns (5.8ms)[0m   [0;1mSHOW FIELDS FROM `replies`[0m
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mPost Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load (1.3ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 10) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPost Update (0.3ms)[0m   [0;1mUPDATE `posts` SET `replied_at` = NULL, `replies_count` = 1, `updated_at` = '2010-05-25 20:45:54' WHERE `id` = 10[0m
+  [4;35;1mSQL (45.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Update (0.2ms)[0m   [0mUPDATE `posts` SET position = (position + 1) WHERE (topic_id = 3 AND position < 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mReply Create (0.2ms)[0m   [0;1mINSERT INTO `replies` (`updated_at`, `text`, `post_id`, `ip`, `user_id`, `created_at`) VALUES('2010-05-25 20:45:54', 'eyjnernutrmtimir', 10, NULL, 1, '2010-05-25 20:45:54')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mActivity Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mActivity Create (0.2ms)[0m   [0;1mINSERT INTO `activities` (`record_type`, `updated_at`, `user_id`, `record_id`, `created_at`) VALUES('Reply', '2010-05-25 20:45:54', 1, 1, '2010-05-25 20:45:54')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCOMMIT[0m
+Redirected to /topics/3/posts/10/replies
+Completed in 87ms (DB: 59) | 302 Found [http://localhost/topics/3/posts/10/replies]
+
+
+Processing RepliesController#index (for 127.0.0.1 at 2010-05-25 20:45:54) [GET]
+  Parameters: {"topic_id"=>"3", "post_id"=>"10"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPost Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (1.3ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 10) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Update (0.2ms)[0m   [0mUPDATE `posts` SET `viewed_count` = 2, `updated_at` = '2010-05-25 20:45:54' WHERE `id` = 10[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTopic Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `topics`[0m
+  [4;36;1mTopic Load (1.2ms)[0m   [0;1mSELECT * FROM `topics` WHERE (`topics`.`id` = 3) [0m
+  [4;35;1mReply Load (0.3ms)[0m   [0mSELECT * FROM `replies` WHERE (`replies`.`post_id` = '10') LIMIT 0, 5[0m
+Rendering template within layouts/application
+Rendering replies/index
+  [4;36;1mReply Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `replies`[0m
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 47ms (View: 20, DB: 10) | 200 OK [http://localhost/topics/3/posts/10/replies]
+
+
+Processing ActivitiesController#index (for 127.0.0.1 at 2010-05-25 20:46:00) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (30.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mActivity Load (0.3ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`user_id` = '1') ORDER BY created_at LIMIT 0, 25[0m
+Rendering template within layouts/application
+Rendering activities/index
+  [4;36;1mActivity Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mPost Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load (1.8ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 8) [0m
+  [4;35;1mTopic Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `topics`[0m
+  [4;36;1mTopic Load (1.2ms)[0m   [0;1mSELECT * FROM `topics` WHERE (`topics`.`id` = 2) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `topics` WHERE (`topics`.`id` = 2) [0m
+  [4;35;1mTopic Load (0.1ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 3) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 10) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 3) [0m
+  [4;36;1mReply Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `replies`[0m
+  [4;35;1mReply Load (1.0ms)[0m   [0mSELECT * FROM `replies` WHERE (`replies`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 10) [0m
+
+
+ActionView::TemplateError (NoMethodError) on line #33 of app/views/activities/index.html.erb:
+30: 	when "Reply"
+31: 		reply = Reply.find(activity.record_id) 
+32: 		post = reply.post
+33: 		topic = post.reply %>
+34: 	<%= activity.created_at.strftime("%Y-%m-%d %H:%M:%S %p") %> replied to Post : <%=post.title%> under Topic : <%=topic.title%> 		
+35: 	<%
+36: 	end%>
+
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/associations/association_proxy.rb:209:in `method_missing'
+    app/views/activities/index.html.erb:33
+    app/views/activities/index.html.erb:19:in `each'
+    app/views/activities/index.html.erb:19
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable.rb:39:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_view/renderable.rb:39:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_view/template.rb:73:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_view/base.rb:256:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_view/base.rb:369:in `_render_with_layout'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_view/base.rb:254:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1177:in `render_for_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:905:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/mime_responds.rb:135:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/mime_responds.rb:135:in `custom'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/mime_responds.rb:164:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/mime_responds.rb:164:in `respond'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/mime_responds.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/mime_responds.rb:158:in `respond'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/activities_controller.rb:8:in `index'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1256:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1256:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:617:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/session_management.rb:134:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:392:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:74:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:74:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_trace (41.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_request_and_response (0.9ms)
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing ActivitiesController#index (for 127.0.0.1 at 2010-05-25 20:46:25) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (4.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mActivity Load (0.3ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`user_id` = '1') ORDER BY created_at LIMIT 0, 25[0m
+Rendering template within layouts/application
+Rendering activities/index
+  [4;36;1mActivity Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mPost Columns (25.9ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load (1.3ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 8) [0m
+  [4;35;1mTopic Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `topics`[0m
+  [4;36;1mTopic Load (1.2ms)[0m   [0;1mSELECT * FROM `topics` WHERE (`topics`.`id` = 2) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `topics` WHERE (`topics`.`id` = 2) [0m
+  [4;35;1mTopic Load (0.1ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 3) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 10) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 3) [0m
+  [4;36;1mReply Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `replies`[0m
+  [4;35;1mReply Load (0.9ms)[0m   [0mSELECT * FROM `replies` WHERE (`replies`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 10) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 3) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 110ms (View: 59, DB: 40) | 200 OK [http://localhost/users/1/activities/]
+
+
+Processing ActivitiesController#index (for 127.0.0.1 at 2010-05-25 20:46:57) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mActivity Load (1.3ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`user_id` = '1') ORDER BY created_at LIMIT 0, 25[0m
+Rendering template within layouts/application
+Rendering activities/index
+  [4;36;1mActivity Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mPost Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load (1.2ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 8) [0m
+  [4;35;1mTopic Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `topics`[0m
+  [4;36;1mTopic Load (1.4ms)[0m   [0;1mSELECT * FROM `topics` WHERE (`topics`.`id` = 2) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `topics` WHERE (`topics`.`id` = 2) [0m
+  [4;35;1mTopic Load (0.1ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 3) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 10) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 3) [0m
+  [4;36;1mReply Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `replies`[0m
+  [4;35;1mReply Load (1.0ms)[0m   [0mSELECT * FROM `replies` WHERE (`replies`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 10) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 3) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 127ms (View: 97, DB: 18) | 200 OK [http://localhost/users/1/activities/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-25 20:47:36) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+ActionController::UnknownAction (No action responded to show. Actions: create, create_activity, and new):
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:617:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/session_management.rb:134:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:392:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-25 20:47:43) [GET]
+
+
+ActionController::RoutingError (No route matches "/user/1" with {:method=>:get}):
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/routing/route_set.rb:390:in `recognize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-05-25 20:47:50) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+ActionController::UnknownAction (No action responded to index. Actions: create, create_activity, and new):
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:617:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/session_management.rb:134:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:392:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ActivitiesController#index (for 127.0.0.1 at 2010-05-25 20:56:54) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (28.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mActivity Load (0.4ms)[0m   [0mSELECT * FROM `activities` WHERE (`activities`.`user_id` = '1') ORDER BY created_at LIMIT 0, 25[0m
+Rendering template within layouts/application
+Rendering activities/index
+  [4;36;1mActivity Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `activities`[0m
+  [4;35;1mPost Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load (1.3ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 8) [0m
+  [4;35;1mTopic Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `topics`[0m
+  [4;36;1mTopic Load (0.9ms)[0m   [0;1mSELECT * FROM `topics` WHERE (`topics`.`id` = 2) [0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `topics` WHERE (`topics`.`id` = 2) [0m
+  [4;35;1mTopic Load (0.2ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 3) [0m
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 10) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 3) [0m
+  [4;36;1mReply Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `replies`[0m
+  [4;35;1mReply Load (1.0ms)[0m   [0mSELECT * FROM `replies` WHERE (`replies`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 10) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `topics` WHERE (`topics`.`id` = 3) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 83ms (View: 30, DB: 42) | 200 OK [http://localhost/users/1/activities/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-25 21:00:18) [GET]
+
+
+ActionController::RoutingError (No route matches "/settings" with {:method=>:get}):
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/routing/route_set.rb:390:in `recognize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-25 21:00:58) [GET]
+
+
+ActionController::RoutingError (No route matches "/setting" with {:method=>:get}):
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/routing/route_set.rb:390:in `recognize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-25 21:01:09) [GET]
+
+
+ActionController::RoutingError (No route matches "/settings/index" with {:method=>:get}):
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/routing/route_set.rb:390:in `recognize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ActivitiesController#index (for 127.0.0.1 at 2010-05-25 21:02:45) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/base.rb:1509:in `find_from_ids'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/base.rb:590:in `find'
+    /app/controllers/activities_controller.rb:5:in `index'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1256:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1256:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:617:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/session_management.rb:134:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:392:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_trace (30.8ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_request_and_response (0.9ms)
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-25 21:02:59) [GET]
+
+
+ActionController::RoutingError (No route matches "/settings" with {:method=>:get}):
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/routing/route_set.rb:390:in `recognize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing SettingsController#index (for 127.0.0.1 at 2010-05-25 21:03:14) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Rendering template within layouts/application
+Rendering settings/index
+  [4;36;1mUser Columns (5.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 81ms (View: 79, DB: 0) | 200 OK [http://localhost/settings]
+
+
+Processing SettingsController#index (for 127.0.0.1 at 2010-05-25 21:16:05) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/base.rb:1509:in `find_from_ids'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/base.rb:590:in `find'
+    /app/controllers/settings_controller.rb:13:in `index'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1256:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1256:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:617:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/session_management.rb:134:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:392:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_trace (96.5ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_request_and_response (1.1ms)
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing SettingsController#index (for 127.0.0.1 at 2010-05-25 21:16:56) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+NameError (undefined local variable or method `current_user_id' for #<SettingsController:0x24917ac>):
+    /app/controllers/settings_controller.rb:13:in `index'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1256:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:1256:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:617:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.3/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/session_management.rb:134:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/base.rb:392:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.3/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.3/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_trace (30.0ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/_request_and_response (0.9ms)
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.3/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing SettingsController#index (for 127.0.0.1 at 2010-05-25 21:17:57) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (6.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering settings/index
+Completed in 26ms (View: 7, DB: 7) | 200 OK [http://localhost/settings]
+
+
+Processing SettingsController#index (for 127.0.0.1 at 2010-05-25 22:53:54) [GET]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering settings/index
+Completed in 149ms (View: 46, DB: 3) | 200 OK [http://localhost/settings]

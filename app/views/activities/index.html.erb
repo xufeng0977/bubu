@@ -1,24 +1,22 @@
 <h1>Listing activities</h1>
 
-<table>
-  <tr>
-    <th>User</th>
-    <th>Record type</th>
-    <th>Record</th>
-  </tr>
-
-<% for activity in @activities %>
-  <tr>
-    <td><%=h activity.user_id %></td>
-    <td><%=h activity.record_type %></td>
-    <td><%=h activity.record_id %></td>
-    <td><%= link_to 'Show', activity %></td>
-    <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
-    <td><%= link_to 'Destroy', activity, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% for activity in @activities 
+	case activity.record_type
+	when "Topic"
+		title = Topic.find(activity.record_id).title %>
+	<%= activity.created_at.strftime("%Y-%m-%d %H:%M:%S %p") %> created Topic : <%=title%> 
+	<%
+	when "Post"
+		post = Post.find(activity.record_id)
+		topic = post.topic %>
+	<%= activity.created_at.strftime("%Y-%m-%d %H:%M:%S %p") %> created Post : <%=post.title%> under Topic : <%=topic.title%> 	
+	<%
+	when "Reply"
+		reply = Reply.find(activity.record_id) 
+		post = reply.post
+		topic = post.topic %>
+	<%= activity.created_at.strftime("%Y-%m-%d %H:%M:%S %p") %> replied to Post : <%=post.title%> under Topic : <%=topic.title%> 		
+	<%
+	end%>
+	<br />
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New activity', new_activity_path %>

@@ -10,6 +10,7 @@
       <col class="title" />
 	  <col class="title" />
 	  <col class="title" />
+	  <col class="title" />
       <col class="date" />
     </colgroup>
     <thead>
@@ -30,7 +31,7 @@
 		<td><%= post.replies_count %></td>
         <td><%= link_to post.title, topic_post_replies_path(@topic.id, post.id) %></td>
 		<td><%= post.user.login %></td>
-        <td><%= post.replied_at.to_formatted_s(:long)%></td> 
+        <td><%= post.replied_at.strftime("%Y-%m-%d %H:%M:%S %p")%></td> 
       </tr>
     <% end %>
     </tbody>

@@ -62,6 +62,7 @@ class RepliesController < ApplicationController
 
     respond_to do |format|
       if @reply.save
+        create_activity current_user.id, "Reply", @reply.id
         flash[:notice] = 'Reply was successfully created.'
         format.html { redirect_to topic_post_replies_path(topic_id, post_id) }
         format.xml  { render :xml => @reply, :status => :created, :location => @reply }

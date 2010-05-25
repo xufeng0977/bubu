@@ -13,5 +13,13 @@ class ApplicationController < ActionController::Base
   # from your application log (in this case, all fields with names like "password"). 
   # filter_parameter_logging :password
   include AuthenticatedSystem
+  
+  def create_activity (user_id, record_type, record_id)
+    @activity = Activity.new
+    @activity.user_id = user_id
+    @activity.record_type = record_type
+    @activity.record_id = record_id
+    @activity.save
+  end
 
 end

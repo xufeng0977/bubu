@@ -48,6 +48,7 @@ class TopicsController < ApplicationController
 
     respond_to do |format|
       if @topic.save
+        create_activity current_user.id, "Topic", @topic.id
         flash[:notice] = 'Topic was successfully created.'
         format.html { redirect_to topic_posts_path(@topic.id) }
         format.xml  { render :xml => @topic, :status => :created, :location => @topic }

@@ -128,7 +128,7 @@ legend.hide{
 	background: #ECECEC;
 }
 .postList .date{
-	width:15em;
+/*	width:25em; */
 	font-size:11px;
 	font-family:Tahoma, Verdana, Arial, Helvetica, sans-serif;
 	color:#666;

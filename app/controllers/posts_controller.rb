@@ -54,6 +54,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         @post.move_to_top
+        create_activity current_user.id, "Post", @post.id
         flash[:notice] = 'Post was successfully created.'
         format.html { redirect_to topic_post_replies_path(@post.topic_id, @post.id) }
         format.xml  { render :xml => @post, :status => :created, :location => @post }
