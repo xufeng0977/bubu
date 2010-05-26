@@ -3,18 +3,41 @@
 <h2>Post: <%= @post.title %></h2>
 <h3><%= @post.text %></h3>
 
-<table>
-  <tr>
-  </tr>
 
-<% for reply in @replies %>
-  <tr>
-    <td><%= reply.text %></td>
-  </tr>
-<% end %>
-</table>
+
+<div class="clearfix">
+	<div class="article">
+		<div class="topic-content clearfix">
+			<div class="user-face">
+				
+			</div>
+			<div class="topic-doc">
+				
+			</div>
+		</div>
+		<ul class="topic-reply">
+			<% for reply in @replies 
+				@reply_user = reply.user%>
+			<li class="clearfix">
+			    <div class="user-face">
+			        <a href="http://www.douban.com/people/vincentwin/"><%= image_tag url_for_file_column 'reply_user', 'image' %></a>
+			    </div>
+			    <div class="reply-doc">
+			        <div class="bg-img-green">
+			            <h4><%= reply.created_at.strftime("%Y-%m-%d %H:%M:%S %p")%>
+			                <a href="http://www.douban.com/people/vincentwin/"><%= @reply_user.login%></a> 
+			            </h4>
+			        </div>
+			        <p><%= reply.text %></p>
+			    </div>
+			</li>
+			<% end %>
+		</ul>
+	</div>
+</div>
+
+
 
 <%= will_paginate @replies%>
-<br />
 
-<%= link_to 'New reply', new_topic_post_reply_path(@topic.id, @post.id) %>
+<p><%= link_to 'New reply', new_topic_post_reply_path(@topic.id, @post.id) %></p>

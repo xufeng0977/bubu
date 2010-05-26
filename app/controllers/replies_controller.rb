@@ -53,15 +53,15 @@ class RepliesController < ApplicationController
     post_id = params[:post_id]
     @reply.post_id = post_id
     @reply.user_id = current_user.id
-    topic_id = params[:topic_id]
-    @post = Post.find(params[:post_id])
-    @post.replies_count += 1
-    @post.replied_at = @reply.created_at
-    @post.save
-    @post.move_to_top
 
     respond_to do |format|
       if @reply.save
+        topic_id = params[:topic_id]
+        @post = Post.find(params[:post_id])
+        @post.replies_count += 1
+        @post.replied_at = @reply.created_at
+        @post.save
+        @post.move_to_top
         create_activity current_user.id, "Reply", @reply.id
         flash[:notice] = 'Reply was successfully created.'
         format.html { redirect_to topic_post_replies_path(topic_id, post_id) }

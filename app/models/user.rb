@@ -1,6 +1,7 @@
 require 'digest/sha1'
 
 class User < ActiveRecord::Base
+  file_column :image, :magick => {:geometry => "100x100>", :versions => {"thumb" => "50x50", "medium" => "80x80"}}
   include Authentication
   include Authentication::ByPassword
   include Authentication::ByCookieToken
@@ -27,7 +28,7 @@ class User < ActiveRecord::Base
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :login, :email, :name, :password, :password_confirmation
+  attr_accessible :login, :email, :name, :password, :password_confirmation, :image
 
 
 

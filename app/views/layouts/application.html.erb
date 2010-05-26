@@ -16,6 +16,7 @@
       <div id="top-nav-user">
       <% if logged_in? %>
         <%= h current_user.login %>
+		<%= link_to 'Settings', url_for (:controller => '/settings') %>
         <%= link_to 'Logout', logout_path %>
       <% else %>
         <%= link_to 'Login', login_path %>

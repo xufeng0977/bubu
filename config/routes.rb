@@ -6,7 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.register '/register', :controller => 'users', :action => 'create'
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.home '/', :controller => 'topics', :action => 'index'
-#  map.settings '/settings', :controller => 'settings', :action = 'show'
+#  map.settings '/settings', :controller => 'settings', :action => 'index'
   map.resources :users do |user|
     user.resources :activities
   end
