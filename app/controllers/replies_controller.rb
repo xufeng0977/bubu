@@ -1,6 +1,8 @@
 class RepliesController < ApplicationController
   # GET /replies
   # GET /replies.xml
+  before_filter :login_required, :except => [:index, :show]
+  
   def index
     @post = Post.find(params[:post_id])
     @post.viewed_count += 1
@@ -8,7 +10,8 @@ class RepliesController < ApplicationController
     @topic = Topic.find(params[:topic_id])
 #    @replies = Reply.find(:all, :conditions => {:post_id => params[:post_id]})
     @replies = Reply.paginate :page => params[:page], :conditions => {:post_id => params[:post_id]}, :per_page => 5 
-
+    @user = @post.user
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @replies }

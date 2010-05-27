@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
+  before_filter :login_required, :except => [:index, :show]
+  
   def index
     @topic = Topic.find(params[:topic_id])
 

@@ -1,43 +1,88 @@
-<h1><%= link_to 'Home', topics_path %></h1>
+<!--<h1><%= link_to 'Home', topics_path %></h1>
 <h1>Topic: <%= link_to @topic.title, topic_posts_path(@topic.id) %></h1>
-<h2>Post: <%= @post.title %></h2>
-<h3><%= @post.text %></h3>
+-->
 
 
 
-<div class="clearfix">
-	<div class="article">
-		<div class="topic-content clearfix">
-			<div class="user-face">
-				
+<div id="content">
+	<h1><%= @post.title%></h1>
+
+	<div class="clearfix">
+		
+		<div class="article">
+			<div class="topic-content clearfix">
+				<div class="user-face">
+					<a href="http://www.douban.com/people/vincentwin/"><%= image_tag url_for_file_column 'user', 'image', 'thumb' %></a>
+				</div>
+				<div class="topic-doc">
+					<h3>
+						<span class="color-green"><%= @post.created_at.strftime("%Y-%m-%d %H:%M:%S %p")%></span>
+						<span class="pl20">created by <a href="#"><%=@user.login%></a></span>
+					</h3>
+					<table class="infobox" width="100%">
+						<tbody>
+							<tr>
+								<td class="tablelt"></td>
+								<td class="tablect"></td>
+								<td class="tablert"></td>
+							</tr>
+							<tr>
+								<td class="tablelc"></td>
+								<td class="tablecc">
+									<strong>Title : </strong><%= @post.title%>
+								</td>
+								<td class="tablerc"></td>
+							</tr>
+							<tr>
+								<td class="tablelb"></td>
+								<td class="tablecb"></td>
+								<td class="tablerb"></td>
+							</tr>
+						</tbody>
+					</table>
+					<p><%= @post.text %></p>
+				</div>
 			</div>
-			<div class="topic-doc">
-				
-			</div>
+			<ul class="topic-reply">
+				<% for reply in @replies 
+					@reply_user = reply.user%>
+				<li class="clearfix">
+				    <div class="user-face">
+				        <a href="http://www.douban.com/people/vincentwin/"><%= image_tag url_for_file_column 'reply_user', 'image', 'thumb' %></a>
+				    </div>
+				    <div class="reply-doc">
+				        <div class="bg-img-green">
+				            <h4><%= reply.created_at.strftime("%Y-%m-%d %H:%M:%S %p")%>
+				                <a href="http://www.douban.com/people/vincentwin/"><%= @reply_user.login%></a> 
+				            </h4>
+				        </div>
+				        <p><%= reply.text %></p>
+				    </div>
+				</li>
+				<% end %>
+			</ul>
 		</div>
-		<ul class="topic-reply">
-			<% for reply in @replies 
-				@reply_user = reply.user%>
-			<li class="clearfix">
-			    <div class="user-face">
-			        <a href="http://www.douban.com/people/vincentwin/"><%= image_tag url_for_file_column 'reply_user', 'image' %></a>
-			    </div>
-			    <div class="reply-doc">
-			        <div class="bg-img-green">
-			            <h4><%= reply.created_at.strftime("%Y-%m-%d %H:%M:%S %p")%>
-			                <a href="http://www.douban.com/people/vincentwin/"><%= @reply_user.login%></a> 
-			            </h4>
-			        </div>
-			        <p><%= reply.text %></p>
-			    </div>
-			</li>
-			<% end %>
-		</ul>
+	</div>
+
+	<%= will_paginate @replies%>
+
+	<p><%= link_to 'New reply', new_topic_post_reply_path(@topic.id, @post.id) %></p>
+</div>
+<div id="aside">
+	<p class="pl2">&gt;<%= link_to @topic.title, topic_posts_path(@topic.id) %></p>
+	<br />
+	<h2 class="usf">latest Topics:</h2>
+	<div class="indent">
+		<p class="pl ul">
+			<a href="#">dafjasdniaonvd</a>
+			<span class="pl">david</span>
+		</p>
+		<p class="pl ul">
+			<a href="#">nioanrovwnovanklndalkncasd</a>
+			<span class="pl">kate</span>
+		</p>
 	</div>
 </div>
-
-
-
-<%= will_paginate @replies%>
-
-<p><%= link_to 'New reply', new_topic_post_reply_path(@topic.id, @post.id) %></p>
+<div id="extra">
+	
+</div>

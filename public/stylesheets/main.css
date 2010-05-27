@@ -20,7 +20,7 @@ a:hover,a:focus,a:active{
 	color:#fe6100;
 }
 #wrapper{
-	width: 776px; 
+	width: 950px; 
 	margin:5px auto;
 	text-align:left;
 }
@@ -39,12 +39,18 @@ a:hover,a:focus,a:active{
 
 #content{
 	float: left;
-	width:75%;
-	border-right: 1px dashed;
+/*	width:75%;*/
+	width: 590px;
+/*	border-right: 1px dashed;*/
 }
 #sidebar{
 	float: right;
-	width:24%;
+/*	width:24%;*/
+	width: 310px;
+}
+#aside{
+	float: right;
+	width: 310px;
 }
 #header{
 	float: left;
@@ -231,7 +237,113 @@ a.link-reg:link, a.link-reg:visited, a.link-reg:hover, a.link-reg:active {
 .article {
 	float: left;
 	padding-right: 40px;
-/*	width: 590px;*/
+	width: 590px;
+}
+
+
+#content {
+	min-height: 420px;
+}
+h1 {
+	color: #494949;
+	display: block;
+	font-size: 25px;
+	font-weight: bold;
+	line-height: 1.1;
+	margin: 0;
+	padding: 0 0 15px;
+}
+h2 {
+	color: #006600;
+	font: 14px/150% Arial,Helvetica,sans-serif;
+	margin: 0 0 12px;
+}
+h3 {
+	color: #666666;
+	font: 14px/150% Arial,Helvetica,sans-serif;
+	margin-bottom: 1px;
+	margin-left: 4px;
+	height: 26px;
+}
+table {
+	border: medium none;
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	border-spacing: 0;
+}
+.topic-content .topic-doc {
+	float: right;
+	margin-bottom: 30px;
+	width: 520px;
+}
+.topic-content .topic-doc h3 {
+	background: none repeat scroll 0 0 transparent;
+	height: auto;
+	margin: 0;
+	padding: 5px 0;
+}
+.color-green {
+	color: #006600;
+}
+.pl20 {
+	padding-left: 20px;
+}
+.infobox {
+	margin-bottom: 20px;
+	table-layout: fixed;
+	width: 100%;
+}
+.tablelt {
+	background: url("http://t.douban.com/pics/ibox.gif") repeat scroll 0 0 transparent;
+	height: 3px;
+	width: 3px;
+}
+.tablect {
+	background: url("http://t.douban.com/pics/tablev.gif") repeat scroll 0 0 transparent;
+	height: 3px;
+}
+.tablert {
+	background: url("http://t.douban.com/pics/ibox.gif") repeat scroll right top transparent;
+	height: 3px;
+	width: 3px;
+}
+.tablelc {
+	background: url("http://t.douban.com/pics/tableh.gif") repeat scroll 0 0 transparent;
+	width: 3px;
+}
+.tablecc {
+	background: none repeat scroll 0 0 #FFF6EE;
+	margin-bottom: 20px;
+	overflow: hidden;
+	padding: 6px;
+}
+.tablerc {
+	background: url("http://t.douban.com/pics/tableh.gif") repeat scroll right center transparent;
+	width: 3px;
+}
+.tablelb {
+	background: url("http://t.douban.com/pics/ibox.gif") repeat scroll 0 bottom transparent;
+	height: 3px;
+	width: 3px;
+}
+.tablecb {
+	background: url("http://t.douban.com/pics/tablev.gif") repeat scroll left bottom transparent;
+	height: 3px;
+}
+.tablerb {
+	background: url("http://t.douban.com/pics/ibox.gif") repeat scroll right bottom transparent;
+	height: 3px;
+	width: 3px;
+}
+.topic-content .topic-doc p {
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	word-wrap: break-word;
+}
+body, td, th {
+	font: 12px/162% Arial,Helvetica,sans-serif;
 }
 ul {
 	list-style: none outside none;
@@ -249,9 +361,13 @@ a:link {
 	color: #336699;
 	text-decoration: none;
 }
+a:visited {
+	color: #666699;
+	text-decoration: none;
+}
 .topic-reply li {
 	margin: 0 0 20px 48px;
-	padding: 0;
+	clear: both;
 }
 .topic-content .user-face, .topic-reply .user-face {
 	float: left;
@@ -266,7 +382,7 @@ a:link {
 	padding: 0;
 }
 .bg-img-green {
-	background-color: #0ff;
+	background: url("http://t.douban.com/pics/topicbar.gif") no-repeat scroll 0 0 transparent;
 	display: block;
 }
 .topic-reply .reply-doc h4 {
@@ -281,4 +397,21 @@ a:link {
 	overflow: hidden;
 	word-wrap: break-word;
 }
+.pl2 {
+	color: #666666;
+	font: 14px/150% Arial,Helvetica,sans-serif;
+}
+.aside .indent {
+	margin-bottom: 25px;
+}
+.ul {
+	border-bottom: 1px dashed #DDDDDD;
+	clear: both;
+	line-height: 100%;
+}
+.pl {
+	color: #666666;
+	font: 12px/150% Arial,Helvetica,sans-serif;
+}
+
 
