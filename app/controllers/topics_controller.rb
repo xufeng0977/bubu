@@ -5,7 +5,8 @@ class TopicsController < ApplicationController
 
   def index
     @topics = Topic.find(:all)
-
+    @tags = Topic.tag_counts
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @topics }
@@ -85,6 +86,15 @@ class TopicsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(topics_url) }
       format.xml  { head :ok }
+    end
+  end
+  
+  def tag
+    @topics = Topic.find_tagged_with(params[:id])
+    
+    respond_to do |format|
+      format.html # tag.html.erb
+      format.xml  { render :xml => @topics }
     end
   end
 end

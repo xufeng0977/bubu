@@ -46,16 +46,3 @@
     <%= link_to 'New topic', new_topic_path %>
   </div>
 </div>
-<div id="sidebar">
-    <div id="topTen">
-    <h3>Hotest Topics</h3>
-    <ol>
-      <li><a href="#">bubu</a><span>(234)</span></li>
-      <li><a href="#">david</a><span>(123)</span></li>
-    </ol>
-  </div>
-</div>
-
-<% tag_cloud @tags, %w(css1 css2 css3 css4) do |tag, css_class| %>
-<%= link_to tag.name, {:action => :tag, :id => tag.name }, :class => css_class %>
-<% end %>

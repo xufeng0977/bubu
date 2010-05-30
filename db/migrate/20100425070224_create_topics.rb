@@ -7,6 +7,7 @@ class CreateTopics < ActiveRecord::Migration
       t.integer "viewed_count", :default => 0
       t.integer "posts_count", :default => 0
       t.integer "replies_count", :default => 0
+      t.string "cached_tag_list"
       t.timestamps
     end
   end

@@ -4,6 +4,8 @@
   <%= f.error_messages %>
   <Label for "topic_title">Title:</Label>
   <%= f.text_field :title %> <br />
+  <%= f.label :tag_list %>
+  <%= f.text_field :tag_list, :size => 80 %>
   <p>
     <%= f.submit "Create" %>
   </p>
