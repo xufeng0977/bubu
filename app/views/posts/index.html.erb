@@ -1,61 +1,50 @@
+<h1><%= @topic.title%></h1>
 <div id="content">
-  <div id="posts">
-
-  <table class="postList" summary="Topic : <%= @topic.title %>">
-    <caption>
-      <strong>Topic: <%= @topic.title%></strong>
-      <%= link_to 'New post', new_topic_post_path(@topic.id) %>
-    </caption>
-    <colgroup>
-      <col class="title" />
-	  <col class="title" />
-	  <col class="title" />
-	  <col class="title" />
-      <col class="date" />
-    </colgroup>
-    <thead>
-      <tr>
-		<th scope="col">Viewed</th>
-		<th scope="col">Replies</th>
-        <th scope="col">Title</th>
-		<th	scope="col">Author</th>
-        <th scope="col">Date</th>
-      </tr>
-    </thead>
-    <tbody>
-    <% odd_or_even = 0 
-       for post in @posts 
-        odd_or_even = 1 - odd_or_even%>
-        <tr class="postLine<%=odd_or_even%>">
-		<td><%= post.viewed_count %></td>
-		<td><%= post.replies_count %></td>
-        <td><%= link_to post.title, topic_post_replies_path(@topic.id, post.id) %></td>
-		<td><%= post.user.login %></td>
-        <td><%= post.replied_at.strftime("%Y-%m-%d %H:%M:%S %p")%></td> 
-      </tr>
-    <% end %>
-    </tbody>
-  </table>
-
-  <%= will_paginate @posts%>
-  <br />
-
-  <%= link_to 'New post', new_topic_post_path(@topic.id) %>
-  </div>
+	<div class="clearfix">
+		<div class="article">
+			<table class="olt">
+				<tbody>
+					<tr>
+						<td>Title</td>
+						<td>Author</td>
+						<td nowrap="nowrap">Replies</td>
+						<td align="right">Last replied at</td>
+					</tr>
+					<% for post in @posts %>
+				    <tr>
+				        <td><%= link_to post.title, topic_post_replies_path(@topic.id, post.id) %></td>
+						<td nowrap="nowrap"><%= post.user.login %></td>
+						<td nowrap="nowrap"><%= post.replies_count %></td>
+				        <td class="time" nowrap="nowrap"><%= post.replied_at.strftime("%m-%d %H:%M")%></td> 
+				    </tr>
+				    <% end %>
+				</tbody>
+			</table>
+			<div class="paginator">
+				<%= will_paginate @posts%>
+			</div>
+			<%= link_to 'New post', new_topic_post_path(@topic.id) %>
+		</div>
+		<div id="aside">
+			<p class="p12">&gt;<%= link_to @topic.title, topic_posts_path(@topic.id) %></p>
+			<br />
+			<br />
+			<br />
+			<p class="pl">
+				Subscribe to topic: <%= @topic.title%>
+				<br />
+				<span class="feed">
+					<a href="#">feed: rss 2.0</a>
+				</span>
+			</p>
+		</div>
+		<div class="extra">
+			
+		</div>
+	</div>
 </div>
-<div id="sidebar">
-  <div id="topTen">
-    <h3>Hotest Topics</h3>
-    <ol>
-      <li><a href="#">bubu</a><span>(234)</span></li>
-      <li><a href="#">david</a><span>(123)</span></li>
-    </ol>
-  </div>
-  <div id="latest">
-    <h3>Latest Topics</h3>
-    <ol>
-      <li><a href="#">bubu</a><span>(234)</span></li>
-      <li><a href="#">david</a><span>(123)</span></li>
-    </ol>
-  </div>
-</div>
+
+
+
+
+

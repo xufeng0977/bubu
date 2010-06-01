@@ -62,27 +62,28 @@
 				<% end %>
 			</ul>
 		</div>
-	</div>
 
-	<%= will_paginate @replies%>
+		<%= will_paginate @replies%>
 
-	<p><%= link_to 'New reply', new_topic_post_reply_path(@topic.id, @post.id) %></p>
-</div>
-<div id="aside">
-	<p class="pl2">&gt;<%= link_to @topic.title, topic_posts_path(@topic.id) %></p>
-	<br />
-	<h2 class="usf">latest Topics:</h2>
-	<div class="indent">
-		<p class="pl ul">
-			<a href="#">dafjasdniaonvd</a>
-			<span class="pl">david</span>
-		</p>
-		<p class="pl ul">
-			<a href="#">nioanrovwnovanklndalkncasd</a>
-			<span class="pl">kate</span>
-		</p>
-	</div>
-</div>
-<div id="extra">
+		<p><%= link_to 'New reply', new_topic_post_reply_path(@topic.id, @post.id) %></p>
+
+		<div id="aside">
+			<p class="pl2">&gt;<%= link_to @topic.title, topic_posts_path(@topic.id) %></p>
+			<br />
+			<h2 class="usf">latest Topics:</h2>
+			<div class="indent">
+				<p class="pl ul">
+					<a href="#">dafjasdniaonvd</a>
+					<span class="pl">david</span>
+				</p>
+				<p class="pl ul">
+					<a href="#">nioanrovwnovanklndalkncasd</a>
+					<span class="pl">kate</span>
+				</p>
+			</div>
+		</div>
+		<div id="extra">
 	
+		</div>
+	</div>
 </div>

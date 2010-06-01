@@ -9,6 +9,7 @@ class CreateTopics < ActiveRecord::Migration
       t.integer "replies_count", :default => 0
       t.string "cached_tag_list"
       t.timestamps
+      t.datetime "deleted_at"
     end
   end
 

@@ -36,13 +36,11 @@ a:hover,a:focus,a:active{
 #top-nav-user{
 	float: right;
 }
-
+/*
 #content{
 	float: left;
-/*	width:75%;*/
 	width: 590px;
-/*	border-right: 1px dashed;*/
-}
+}*/
 #sidebar{
 	float: right;
 /*	width:24%;*/
@@ -425,4 +423,22 @@ a:visited {
 .css4 {
 	font-size: 1.6em;
 }
+.olt {
+	margin-bottom: 3px;
+	padding: 0;
+	width: 100%;
+}
+.olt td {
+	border-bottom: 1px dasshed #DDDDDD;
+	padding: 3px 3px 3px 0;
+}
+.olt td.time {
+	color: #999999;
+	padding-right: 0;
+	text-align: right;
+	width: 110%;
+}
+
+
+
 

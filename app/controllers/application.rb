@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
   # from your application log (in this case, all fields with names like "password"). 
   # filter_parameter_logging :password
   include AuthenticatedSystem
+  include SimpleCaptcha::ControllerHelpers
   
   def create_activity (user_id, record_type, record_id)
     @activity = Activity.new

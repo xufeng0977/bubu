@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100530195529) do
+ActiveRecord::Schema.define(:version => 20100601223656) do
 
   create_table "activities", :force => true do |t|
     t.integer  "user_id"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20100530195529) do
     t.datetime "replied_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "deleted_at"
   end
 
   create_table "replies", :force => true do |t|
@@ -38,6 +39,14 @@ ActiveRecord::Schema.define(:version => 20100530195529) do
     t.integer  "post_id"
     t.integer  "user_id"
     t.integer  "ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "deleted_at"
+  end
+
+  create_table "simple_captcha_data", :force => true do |t|
+    t.string   "key",        :limit => 40
+    t.string   "value",      :limit => 6
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -60,11 +69,13 @@ ActiveRecord::Schema.define(:version => 20100530195529) do
     t.string   "title"
     t.integer  "user_id"
     t.string   "ip"
-    t.integer  "viewed_count",  :default => 0
-    t.integer  "posts_count",   :default => 0
-    t.integer  "replies_count", :default => 0
+    t.integer  "viewed_count",    :default => 0
+    t.integer  "posts_count",     :default => 0
+    t.integer  "replies_count",   :default => 0
+    t.string   "cached_tag_list"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "deleted_at"
   end
 
   create_table "users", :force => true do |t|
@@ -78,6 +89,7 @@ ActiveRecord::Schema.define(:version => 20100530195529) do
     t.string   "remember_token",            :limit => 40
     t.datetime "remember_token_expires_at"
     t.text     "image"
+    t.datetime "deleted_at"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true

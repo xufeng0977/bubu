@@ -11,6 +11,7 @@ class CreatePosts < ActiveRecord::Migration
       t.integer "replies_count", :default => 0
       t.datetime "replied_at"
       t.timestamps
+      t.datetime "deleted_at"
     end
   end
 

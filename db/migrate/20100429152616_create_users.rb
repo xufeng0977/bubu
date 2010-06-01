@@ -11,6 +11,7 @@ class CreateUsers < ActiveRecord::Migration
       t.column :remember_token,            :string, :limit => 40
       t.column :remember_token_expires_at, :datetime
       t.text  "image"
+      t.datetime "deleted_at"
 
     end
     add_index :users, :login, :unique => true

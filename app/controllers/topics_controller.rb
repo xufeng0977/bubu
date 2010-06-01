@@ -44,6 +44,11 @@ class TopicsController < ApplicationController
   # POST /topics
   # POST /topics.xml
   def create
+    unless simple_captcha_valid?
+      flash[:error] = "invalid captcha code"
+      redirect_to :action => "new" 
+      return
+    end
     @topic = Topic.new(params[:topic])
     @topic.user_id = current_user.id
 

@@ -6,6 +6,7 @@ class CreateReplies < ActiveRecord::Migration
       t.integer "user_id"
       t.integer "ip"
       t.timestamps
+      t.datetime "deleted_at"
     end
   end
 
