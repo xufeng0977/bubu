@@ -25,4 +25,9 @@ class UsersController < ApplicationController
       render :action => 'new'
     end
   end
+  
+  def show
+    @user = User.find(params[:id])
+    @activities = Activity.paginate :page => params[:page], :conditions => {:user_id => @user.id}, :order => "created_at", :per_page => 25
+  end
 end

@@ -11,6 +11,7 @@ class RepliesController < ApplicationController
 #    @replies = Reply.find(:all, :conditions => {:post_id => params[:post_id]})
     @replies = Reply.paginate :page => params[:page], :conditions => {:post_id => params[:post_id]}, :per_page => 5 
     @user = @post.user
+    @latest_posts = Post.find(:all, :conditions => {:topic_id => params[:topic_id]}, :order => 'created_at desc', :limit =>10)
     
     respond_to do |format|
       format.html # index.html.erb
@@ -54,17 +55,18 @@ class RepliesController < ApplicationController
   def create
     @reply = Reply.new(params[:reply])
     post_id = params[:post_id]
+    topic_id = params[:topic_id]
     @reply.post_id = post_id
     @reply.user_id = current_user.id
+    @reply.ip = get_client_ip request
 
     respond_to do |format|
       if @reply.save
-        topic_id = params[:topic_id]
-        @post = Post.find(params[:post_id])
-        @post.replies_count += 1
-        @post.replied_at = @reply.created_at
-        @post.save
-        @post.move_to_top
+        post = @reply.post
+        post.replies_count += 1
+        post.replied_at = @reply.created_at
+        post.save
+        post.move_to_top
         create_activity current_user.id, "Reply", @reply.id
         flash[:notice] = 'Reply was successfully created.'
         format.html { redirect_to topic_post_replies_path(topic_id, post_id) }

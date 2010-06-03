@@ -22,5 +22,10 @@ class ApplicationController < ActionController::Base
     @activity.record_id = record_id
     @activity.save
   end
+  
+  def get_client_ip (request)
+#    return request.env["HTTP_X_FORWARDED_FOR"]
+    return request.remote_ip
+  end
 
 end

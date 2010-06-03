@@ -6,9 +6,11 @@ class PostsController < ApplicationController
   def index
     @topic = Topic.find(params[:topic_id])
 
-#   @posts = Post.find(:all, :conditions => {:topic_id => params[:topic_id]}, :order => "position")
     @posts = Post.paginate :page => params[:page], :conditions => {:topic_id => params[:topic_id]}, :order => "position", :per_page => 25
-
+    
+    @similiar_topics = Topic.find_tagged_with(@topic.tag_list, :limit => 10)
+    @similiar_topics.delete(@topic)
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @posts }
@@ -51,11 +53,14 @@ class PostsController < ApplicationController
     @post.topic_id = params[:topic_id]
     @post.user_id = current_user.id
     @post.replied_at = Time.now
-    @post.ip = request.remote_ip
+    @post.ip = get_client_ip request
 
     respond_to do |format|
       if @post.save
         @post.move_to_top
+        topic = @post.topic
+        topic.posts_count += 1
+        topic.save
         create_activity current_user.id, "Post", @post.id
         flash[:notice] = 'Post was successfully created.'
         format.html { redirect_to topic_post_replies_path(@post.topic_id, @post.id) }

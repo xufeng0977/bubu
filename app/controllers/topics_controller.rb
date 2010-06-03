@@ -5,7 +5,10 @@ class TopicsController < ApplicationController
 
   def index
     @topics = Topic.find(:all)
+    @new_topics = Topic.find(:all, :order => 'created_at desc', :limit => 10)
     @tags = Topic.tag_counts
+    @active_posts = Post.find(:all, :order => 'replied_at desc', :limit => 10)
+    @hottest_topics = Topic.find(:all, :order => 'posts_count desc', :limit => 10)
     
     respond_to do |format|
       format.html # index.html.erb
@@ -51,6 +54,7 @@ class TopicsController < ApplicationController
     end
     @topic = Topic.new(params[:topic])
     @topic.user_id = current_user.id
+    @topic.ip = get_client_ip request
 
     respond_to do |format|
       if @topic.save

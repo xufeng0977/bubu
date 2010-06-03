@@ -29,6 +29,17 @@
 			<p class="p12">&gt;<%= link_to @topic.title, topic_posts_path(@topic.id) %></p>
 			<br />
 			<br />
+			<% unless @similiar_topics.empty? %>
+			<h2 class="usf">Related topics:</h2>
+			<div class="indent">
+				<% for topic in @similiar_topics %>
+				<p class="pl ul">
+					<a href="#"><%= topic.title %></a>
+				</p>
+				<% end %>
+			</div>
+			<% end%>
+			<br />
 			<br />
 			<p class="pl">
 				Subscribe to topic: <%= @topic.title%>
