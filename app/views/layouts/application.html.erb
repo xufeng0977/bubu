@@ -8,38 +8,59 @@
   <%= stylesheet_link_tag 'main' %> 
 </head>
 <body>
+	<div class="top-nav">
+		<div class="bd">
+			<div class="top-nav-info">
+				<% if logged_in? %>
+			        <%= h current_user.login %>
+					<%= link_to 'Settings', url_for (:controller => '/settings') %>
+			        <%= link_to 'Logout', logout_path %>
+			    <% else %>
+			        <%= link_to 'Login', login_path %>
+			        <%= link_to 'Sign up', signup_path %>
+			    <% end %>
+			</div>
+			<div class="top-nav-items">
+				<ul>
+					<li class="on"><%= link_to 'Home', root_path %></li>
+				</ul>
+			</div>
+		</div>
+    </div>
   <div id="wrapper">
-    <div id="top-nav">
-      <div id="top-nav-items">
-        <%= link_to 'Home', root_path %>
-      </div>
-      <div id="top-nav-user">
-      <% if logged_in? %>
-        <%= h current_user.login %>
-		<%= link_to 'Settings', url_for (:controller => '/settings') %>
-        <%= link_to 'Logout', logout_path %>
-      <% else %>
-        <%= link_to 'Login', login_path %>
-        <%= link_to 'Sign up', signup_path %>
-      <% end %>
-      </div>
-    </div>
     <div id="header">
-      <h1 id="logo"><a href="<%= root_path%>"><%= image_tag "logo.png", :alt => "BuBu"%></a></h1>
-      <form id="search" action="">
-        <fieldset>
-          <legend class="hide">search</legend>
-          <label fro ="searchKey"> Topic: <input type="text" id="searchKey" name="searchKey"/></label><input type="submit" value="Search"/>
-        </fieldset>
-      </form>
+		<div id="db-nav-main" class="site-nav">
+			<div class="site-nav-logo">
+				<a href="<%= root_path%>"><%= image_tag "logo.png", :alt => "BuBu"%></a>
+			</div>
+			<div class="bd">
+				<div class="nav-srh">
+					<form id="search" action="">
+				        <div class="inp">
+				        	<span>
+								<input type="text" value="" maxlength="60" size="22" title="" name="search_text" stype="color: rgb(212,212,212);">
+								
+							</span>
+							<span>
+								<input class="bn-srh" type="submit" value="search">
+							</span>
+				        </div>
+				     </form>
+				</div>
+				<div class="site-nav-items">
+					<ul>
+						<li><%= link_to 'My home', root_path %></li>
+						<li><%= link_to 'Explore', root_path %></li>
+					</ul>
+				</div>
+			</div>
+		</div>
     </div>
-    <div id="main">
-      
+     
 <p style="color: green"><%= flash[:notice] %></p>
 
 <%= yield  %>
 
-    </div>
     <div id="footer">
       <div id="footer-rights">
         @2010 bubu.com, all rights reserved

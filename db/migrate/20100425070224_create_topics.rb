@@ -8,6 +8,7 @@ class CreateTopics < ActiveRecord::Migration
       t.integer "posts_count", :default => 0
       t.integer "replies_count", :default => 0
       t.integer "rank", :default => 0
+      t.text "description"
       t.string "cached_tag_list"
       t.timestamps
       t.datetime "deleted_at"

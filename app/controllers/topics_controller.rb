@@ -1,14 +1,15 @@
 class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.xml
-  before_filter :login_required, :except => [:index, :show]
+  before_filter :login_required, :except => [:index, :show, :search]
+#  protect_from_forgery :except => :search
 
   def index
     @topics = Topic.find(:all)
     @new_topics = Topic.find(:all, :order => 'created_at desc', :limit => 10)
     @tags = Topic.tag_counts
     @active_posts = Post.find(:all, :order => 'replied_at desc', :limit => 10)
-    @hottest_topics = Topic.find(:all, :order => 'posts_count desc', :limit => 10)
+    @hottest_topics = Topic.find(:all, :order => 'posts_count desc', :limit => 20)
     
     respond_to do |format|
       format.html # index.html.erb
@@ -103,6 +104,16 @@ class TopicsController < ApplicationController
     
     respond_to do |format|
       format.html # tag.html.erb
+      format.xml  { render :xml => @topics }
+    end
+  end
+  
+  def search
+    text = params[:search_text]
+    @topics = Topic.find(:all, :conditions => ['title LIKE ?', '%' + text + '%'])
+    
+    respond_to do |format|
+      format.html # search.html.erb
       format.xml  { render :xml => @topics }
     end
   end

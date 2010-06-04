@@ -7,6 +7,7 @@ ActionController::Routing::Routes.draw do |map|
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.home '/', :controller => 'topics', :action => 'index'
 #  map.settings '/settings', :controller => 'settings', :action => 'index'
+  map.search '/search', :controller => 'topics', :action => 'search'
   map.simple_captcha '/simple_captcha/:action', :controller => 'simple_captcha'
   map.resources :users do |user|
     user.resources :activities

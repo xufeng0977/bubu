@@ -1,0 +1,44 @@
+<div id="content">
+	<div class="clearfix">
+		<div class="article">
+			
+			<div class="nav-srh">
+				<h2>Search for your interested topics</h2>
+				<form id="search" action="/search" method="get">
+			        <div class="inp">
+			        	<span>
+							<input type="text" value="" maxlength="60" size="22" title="" name="search_text" stype="color: rgb(212,212,212);">
+							
+						</span>
+						<span>
+							<input class="bn-srh" type="submit" value="search">
+						</span>
+			        </div>
+			     </form>
+			</div>
+			<br />
+			<br />
+			<h2 class="usf">Hottest topics:</h2>
+			<div class="no-order">
+				<% for topic in @topics %>
+					<%= link_to topic.title, topic_posts_path(topic.id) %>
+				<% end %>
+			</div>
+			<br />
+			<br />
+			<br />
+
+		    <%= link_to 'New topic', new_topic_path %>
+		</div>
+		<div id="aside">
+			<br />
+			
+			<br />
+			
+
+		</div>
+		<div class="extra">
+			
+		</div>
+	</div>
+</div>

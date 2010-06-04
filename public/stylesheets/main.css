@@ -10,14 +10,42 @@ body{
 h1,h2,h3{
 	font:bold 12px/1.6 Verdana, Arial, Helvetica, sans-serif;
 }
-a:link{
-	color:#3068B5;
+body, td, th {
+	font: 12px/162% Arial,Helvetica,sans-serif;
 }
-a:visited{
-	color:#333;
+ul {
+	list-style: none outside none;
 }
-a:hover,a:focus,a:active{
-	color:#fe6100;
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+a {
+	cursor: pointer;
+}
+a:link {
+	color: #336699;
+	text-decoration: none;
+}
+a:visited {
+	color: #666699;
+	text-decoration: none;
+}
+a img {
+	border-width: 0;
+}
+fieldset img {
+	border: 0 none;
+}
+form {
+	border: 0 none;
+	margin: 0;
+	padding: 0;
+}
+input {
+	font-size: 12px;
+	margin-right: 3px;
 }
 #wrapper{
 	width: 950px; 
@@ -25,58 +53,156 @@ a:hover,a:focus,a:active{
 	text-align:left;
 }
 
-#top-nav{
-	float: left;
-/*	border-bottom: 1px dashed;*/
+.top-nav{
+	border-bottom: 1px dashed #d4d4d4;
+	clear: both;
+	color: #d4d4d4;
+	height: 30px;
 	width: 100%;
+	margin-bottom: 20px;
 }
-#top-nav-items{
-	float: left;
+.top-nav .bd {
+	margin: 0 auto;
+	width: 950px;
 }
-#top-nav-user{
+.top-nav-info {
 	float: right;
+	margin-top: 5px;
 }
-/*
-#content{
+.top-nav a:link, .top-nav a:hover, .top-nav a:active {
+	color: #566d5e;
+}
+.top-nav-info a {
+	margin-left: 10px;
+}
+.top-nav-items{
 	float: left;
-	width: 590px;
-}*/
-#sidebar{
-	float: right;
-/*	width:24%;*/
-	width: 310px;
+	font-size: 12px;
+	margin-top: 3px;
+}
+.top-nav-items li {
+	display: inline;
+	float: left;
+	margin: 2px 20px 0 0;
+}
+.top-nav li.on, .top-nav li.on a:link, .top-nav li.on a:visited, .top-nav li.on a:active {
+	color: #219a44;
+	font-weight: 800;
 }
 #aside{
 	float: right;
 	width: 310px;
 }
 #header{
-	float: left;
-	height:68px;
+	background: none repeat scroll 0 0 transparent;
+	margin: 0 0 40px;
 	width:100%;
-/*	border-bottom: 1px dashed;*/
 }
-#logo{
+.site-nav{
+	clear: both;
+	height: 36px;
+	width: 100%;
+}
+.site-nav-logo {
+	padding-top: 3px;
 	float: left;
-	padding:10px 50px 10px 0px;
+	position: relative;
 }
-#search{
+.site-nav-logo a:hover, .site-nav-logo a:active, .site-nav-logo a {
+	background: none repeat scroll 0 0 transparent;
+}
+.site-nav-logo img {
+	margin-bottom: -3px;
+}
+#db-nav-main .bd {
+	background-color: #e9f4e9;
+	width: 85%;
+}
+.site-nav .bd {
 	float: right;
-	padding:20px 10px 1px 15px 
+	height: 36px;
 }
-
-legend.hide{
-	display: none;
+#db-nav-main .nav-srh, #content .nav-srh {
+	float: right;
+	height: 36px;
 }
-
-#search fieldset{
-	border:0;
-	text-align:center;
+#db-nav-main .nav-srh form, #content .nav-srh form {
+	height: 36px;
+	background: none repeat scroll 0 0 transparent;
 }
-#main{
+.nav-srh form {
+	padding: 0 1px 0 0;
+}
+#db-nav-main .nav-srh .inp, #content .nav-srh .inp {
+	width: 300px;
+}
+.nav-srh .inp {
+	padding-top: 5px;
+}
+#db-nav-main .nav-srh input, #content .nav-srh input {
+	height: 24px;
+	width: 264px;
+}
+#content .nav-srh {
 	width: 100%;
 	float: left;
-	padding:5px 0;
+	margin-bottom: 15px;
+	border: 1px dashed;
+}
+#content .nav-srh h2 {
+	float: left;
+	font-size: 16px;
+	margin-top: 6px;
+	padding-left: 5px;
+}
+#content .nav-srh form {
+	float: right;
+}
+.nav-srh input {
+	background: none repeat scroll 0 0 #FFFFFF;
+	border: 1px solid #a6d098;
+	float: left;
+	line-height: 26px;
+	padding: 0 2px;
+	width: 300px;
+}
+#db-nav-main .nav-srh .bn-srh, #content .nav-srh .bn-srh {
+	background-position: -190px -100px;
+	margin-left: -4px;
+	overflow: hidden;
+	text-indent: -100px;
+	width: 27px;
+	height: 26px;
+}
+.nav-srh .bn-srh {
+	background: url("http://t.douban.com/pics/nav/ui_ns_sbg4.png") no-repeat scroll -190px -100px transparent;
+	border: medium none;
+	cursor: pointer;
+	font-size: 13px;
+	letter-spacing: 3px;
+	padding: 1px 0 3px 3px;
+	text-align: center;
+}
+.site-nav-items {
+	color: #d4d4d4;
+	float: left;
+	line-height: 36px;
+	padding-left: 28px;
+}
+#db-nav-main .site-nav-items li {
+	background: none repeat scroll 0 0 transparent;
+	color: #e9f4e9;
+	margin-right: 30px;
+	float: left;
+}
+#db-nav-main .site-nav-items li a {
+	margin: 0;
+}
+.site-nav-items li a:link, .site-nav-items li a:active, .site-nav-items li a:hover, .site-nav-items li a:visited {
+	color: #0c7823;
+	font-size: 14px;
+	margin-left: 14px;
+	vertical-align: middle;
 }
 #footer{
 	float: left;
@@ -90,69 +216,6 @@ legend.hide{
 #footer-rights{
 	float: left;
 }
-/*
-.postList{
-	table-Layout:fixed;
-	width:100%;
-	margin:0 0 5px;
-}
-.postList caption{
-	padding:3px 8px;
-	background-color: blue;
-	border-top:2px #BBB solid;
-	text-align:left;
-}
-.postList caption strong{
-	float:left;
-	color: #fff;
-}
-.postList caption a{
-	color: white;
-}
-.postList caption a{
-	float:right;
-}
-.postList th{
-	background: #ECECEC;
-}
-.postList tbody td{
-	line-height:2em;
-	white-space:nowrap;
-	text-overflow:ellipsis;
-	-o-text-overflow:ellipsis;
-	overflow:hidden;
-	padding:0 0.5em;
-}
-* html .postList tbody td a{
-	white-space:nowrap;
-}
-*+html .postList tbody td a{
-	white-space:nowrap;
-}
-.postList tbody .postLine0 td{
-	background: #ECECEC;
-}
-.postList .date{
-	font-size:11px;
-	font-family:Tahoma, Verdana, Arial, Helvetica, sans-serif;
-	color:#666;
-}
-#topTen,#latest{
-	margin:10px 0 0;
-}
-#topTen h3,#latest h3{
-	padding:3px 8px;
-	background-color:#ececec;
-	border-top:2px #BBB solid;
-	text-align:left;
-}
-
-#topTen li,#latest li{
-	margin-left:2.2em;
-}
-#topTen li span,#latest li span{
-	font-size:10px;
-}*/
 #topics {
 	width:100%;
 }
@@ -161,7 +224,7 @@ legend.hide{
 	width:100%;
 	height: 143px;
 	background: #E9EEF2;
-/*	border-bottom: 1px dashed;*/
+	margin-bottom: 20px;
 }
 .welcome .reg {
 	-moz-background-clip:border;
@@ -179,6 +242,7 @@ legend.hide{
 .welcome .login {
 	padding-left: 5px;
 	float: right;
+	margin-left: 5px;
 }
 .welcome .reg strong {
 	float:left;
@@ -237,8 +301,6 @@ a.link-reg:link, a.link-reg:visited, a.link-reg:hover, a.link-reg:active {
 	padding-right: 40px;
 	width: 590px;
 }
-
-
 #content {
 	min-height: 420px;
 }
@@ -340,29 +402,6 @@ table {
 	padding: 0;
 	word-wrap: break-word;
 }
-body, td, th {
-	font: 12px/162% Arial,Helvetica,sans-serif;
-}
-ul {
-	list-style: none outside none;
-}
-ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-}
-
-a {
-	cursor: pointer;
-}
-a:link {
-	color: #336699;
-	text-decoration: none;
-}
-a:visited {
-	color: #666699;
-	text-decoration: none;
-}
 .topic-reply li {
 	margin: 0 0 20px 48px;
 	clear: both;
@@ -439,7 +478,10 @@ a:visited {
 	text-align: right;
 	width: 110%;
 }
-
+.no-order a {
+	margin-left: 8px;
+	word-wrap: break-word;
+}
 
 
 

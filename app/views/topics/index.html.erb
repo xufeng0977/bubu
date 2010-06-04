@@ -29,16 +29,29 @@
 <div id="content">
 	<div class="clearfix">
 		<div class="article">
+			
+			<div class="nav-srh">
+				<h2>Search for your interested topics</h2>
+				<form id="search" action="/search" method="get">
+			        <div class="inp">
+			        	<span>
+							<input type="text" value="" maxlength="60" size="22" title="" name="search_text" stype="color: rgb(212,212,212);">
+							
+						</span>
+						<span>
+							<input class="bn-srh" type="submit" value="search">
+						</span>
+			        </div>
+			     </form>
+			</div>
+			<br />
 			<br />
 			<h2 class="usf">Hottest topics:</h2>
-			<div class="indent">
+			<div class="no-order">
 				<% for topic in @hottest_topics %>
-				<p class="pl ul">
 					<%= link_to topic.title, topic_posts_path(topic.id) %>
-				</p>
 				<% end %>
 			</div>
-			
 			<br />
 		    <h2 class="usf">Being discussed:</h2>
 
@@ -63,18 +76,24 @@
 				</tbody>
 			</table>
 
-		    <br />
+		    <br /> 
+			<br />
+			<h2 class="usf">Tags:</h2>
+			<div class="no-order">
+				<p>
+				<% tag_cloud @tags, %w(css1 css2 css3 css4) do |tag, css_class| %>
+				<%= link_to tag.name, {:action => :tag, :id => tag.name }, :class => css_class %>
+				<% end %>
+				</p>
+			</div>
+			
+			<br />
 
 		    <%= link_to 'New topic', new_topic_path %>
 		</div>
 		<div id="aside">
 			<br />
-			<h2 class="usf">Tags:</h2>
-			<p>
-			<% tag_cloud @tags, %w(css1 css2 css3 css4) do |tag, css_class| %>
-			<%= link_to tag.name, {:action => :tag, :id => tag.name }, :class => css_class %>
-			<% end %>
-			</p>
+			
 			<br />
 			
 			<% unless @new_topics.empty? %>
