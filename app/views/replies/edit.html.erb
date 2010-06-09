@@ -1,12 +1,30 @@
-<h1>Editing reply</h1>
 
-<% form_for(@reply) do |f| %>
-  <%= f.error_messages %>
+<div id="content">
+	<h1>Settings</h1>
 
-  <p>
-    <%= f.submit "Update" %>
-  </p>
-<% end %>
+	<div class="clearfix">
+		
+		<div class="article">
 
-<%= link_to 'Show', @reply %> |
-<%= link_to 'Back', replies_path %>
+		</div>
+
+		<div id="aside">
+			<p class="pl2">&gt;<%= link_to 'Topic: ' + @topic.title, topic_posts_path(@topic.id) %></p>
+			<br />
+			<% unless @latest_posts.empty? %>
+			<h2 class="usf">Latest posts:</h2>
+			<div class="indent">
+				<% for post in @latest_posts %>
+				<p class="pl ul">
+					<%= link_to post.title, topic_post_replies_path(@topic.id, post.id) %>
+					<span class="pl"><%= post.user.login %></span>
+				</p>
+				<% end %>
+			</div>
+			<% end%>
+		</div>
+		<div id="extra">
+	
+		</div>
+	</div>
+</div>

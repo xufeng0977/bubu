@@ -56,12 +56,18 @@
 		    <h2 class="usf">Being discussed:</h2>
 
 		    <table class="olt">
+				<colgroup>
+					<col class="title">
+					<col class="author">
+					<col class="topic">
+					<col class="time">
+				</colgroup>
 				<tbody>
 					<tr>
 						<td>Title</td>
 						<td>Author</td>
 						<td nowrap="nowrap">Topic</td>
-						<td align="right">Last replied at</td>
+						<td align="right">Replied at</td>
 					</tr>
 					<% for post in @active_posts 
 							topic = post.topic

@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_many :replies
   has_many :topics
   has_many :activities
-#  acts_as_paranoid
+  acts_as_paranoid
 
   validates_presence_of     :login
   validates_length_of       :login,    :within => 3..40

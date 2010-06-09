@@ -1,4 +1,84 @@
+<h1>Settings</h1>
+<form action="index_submit" method="post" >
+	<div id="content">
+		<div class="clearfix">
+			<div class="article">
+				<div class="xbar clearfix">
+					<div>
+				<!--		<a href="settings/privacy">others</a> -->
+						<span class="now">
+							<span>Profile</span>
+						</span>
+					</div>
+				</div>
+				<table cellpadding="5" align="center" style="clear: both;">
+					<tbody>
+						<tr>
+							<td class="m" valign="top" align="right" style="padding: 5px;">Name: </td>
+							<td valign="top" style="padding: 5px;">
+								<input type="text" value="<%=@user.name%>" maxlength="15" length="15" name="pf_name">
+								<br />
+								max length: 15 characters
+								<rb />
+							</td>
+						</tr>
+						<tr>
+							<td class="m" valign="top" align="right" style="padding: 5px;">Singnature: </td>
+							<td valign="top" style="padding: 5px;">
+								<input type="text" value="<%=@user.name%>" maxlength="30" length="30" name="pf_name">
+								<br />
+								max length: 30 characters
+								<rb />
+							</td>
+						</tr>
+						<tr>
+							<td class="m" valign="top" align="right" style="padding: 5px;">Image: </td>
+							<td valign="top" style="padding: 5px;">
+								<div style="margin: 10px; float: left;">
+								<%= image_tag url_for_file_column 'user', 'image' %>
+								</div>
+								<div style="margin: 10px; float: left;">
+								<%= image_tag url_for_file_column 'user', 'image', 'thumb' %>
+								</div>
+								<div style="margin: 10px; float: left;">
+								<a href="#">Change</a>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="m" valign="top" align="right" style="padding: 5px;">Email: </td>
+							<td valign="top" style="padding: 5px;">
+								<input type="text" value="<%=@user.email%>" maxlength="15" length="15" name="pf_name">
+								<br />
+								max length: 15 characters
+								<rb />
+							</td>
+						</tr>
+						<tr>
+							<td class="m" valign="top" align="right" style="padding: 5px;">Password: </td>
+							<td valign="top" style="padding: 5px;">
+								<a href="#">Change</a>
+							</td>
+						</tr>
+						<tr>
+							<td style="padding: 5px;"></td>
+							<td style="padding: 5px;">
+								<input type="submit" value="Update" name="pf_update">
+								<input type="submit" value="cancel" name="pf_cancel">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 
-<p>user name : <%= @user.login%></p>
-<p>email : <%= @user.email%></p>
-<p><%= image_tag url_for_file_column 'user', 'image' %></p>
+			<div id="aside">
+				<p class="pl2">&gt;some title</p>
+				<br />
+			
+			</div>
+			<div id="extra">
+	
+			</div>
+		</div>
+	</div>
+</form>

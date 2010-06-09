@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def create
     logout_keeping_session!
     @user = User.new(params[:user])
+    @user.name = @user.login
     success = @user && @user.save
     if success && @user.errors.empty?
             # Protects against session fixation attacks, causes request forgery
@@ -28,6 +29,6 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @activities = Activity.paginate :page => params[:page], :conditions => {:user_id => @user.id}, :order => "created_at", :per_page => 25
+    @activities = Activity.paginate :page => params[:page], :conditions => {:user_id => @user.id}, :order => "created_at desc", :per_page => 25
   end
 end

@@ -1,6 +1,9 @@
 *{
 	margin:0;padding:0;
 }
+element.style {
+	clear: both;
+}
 body{
 	font:12px/1.6 Verdana, Arial, Helvetica, sans-serif;	
 	color:#555;
@@ -467,10 +470,16 @@ table {
 	margin-bottom: 3px;
 	padding: 0;
 	width: 100%;
+	table-layout: fixed;
 }
 .olt td {
 	border-bottom: 1px dashed #DDDDDD;
-	padding: 3px 3px 3px 0;
+	padding: 3px 3px 3px 5px;
+	word-wrap: break-word;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	overflow: hidden;
 }
 .olt td.time {
 	color: #999999;
@@ -478,10 +487,60 @@ table {
 	text-align: right;
 	width: 110%;
 }
+.olt .author {
+	width: 80px;
+}
+.olt .time {
+	width: 80px;
+}
+.olt .count {
+	width: 50px;
+}
+.olt .topic {
+	width: 150px;
+}
 .no-order a {
 	margin-left: 8px;
 	word-wrap: break-word;
 }
+.xbar {
+	background: url("http://t.douban.com/pics/zbar.gif") no-repeat scroll 0 0 transparent;
+	float: right;
+	margin-bottom: 20px;
+	width: 100%;
+}
+.xbar div {
+	background: url("http://t.douban.com/pics/zbar.gif") no-repeat scroll right top transparent;
+	float: right;
+	margin-left: 5px;
+	padding-right: 35px;
+}
+.xbar a {
+	display: block;
+	float: right;
+	line-height: 14px;
+	margin: 5px 5px 1px;
+	padding: 3px 5px 2px;
+	text-decoration: none;
+}
+.xbar span.now {
+	background: url("http://t.douban.com/pics/wztab.gif") no-repeat scroll right top transparent;
+	display: block;
+	float: right;
+	margin: 0 5px;
+	padding: 0 10px 0 0;
+}
+.xbar span.now span {
+	background: url("http://t.douban.com/pics/wztab.gif") no-repeat scroll 0 0 transparent;
+	display: block;
+	padding: 6px 1px 5px 11px;
+}
+.m {
+	color: #006600;
+	font-size: 14px;
+	line-height: 120%;
+}
+
 
 
 

@@ -3,5 +3,5 @@ class Topic < ActiveRecord::Base
   belongs_to :user
   validates_presence_of :title
   acts_as_taggable 
-#  acts_as_paranoid
+  acts_as_paranoid
 end

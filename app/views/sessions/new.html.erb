@@ -1,14 +1,39 @@
-<h1>Log In</h1>
 
-<% form_tag session_path do -%>
-<p><%= label_tag 'login' %><br />
-<%= text_field_tag 'login', @login %></p>
+<div id="content">
+	<h1>Log in</h1>
+	<% form_tag session_path do -%>
+		<div class="clearfix">
+		
+			<div class="article">
+				<div style="padding-left: 50px">
+					<br />
+					Your login
+					<br />
+					<%= text_field_tag 'login', @login %>
+					<br />
+					<br />
+					Your password
+					<br />
+					<%= password_field_tag 'password', nil %>
+					<br />
+					<br />
+					<label class="pl">
+						<%= check_box_tag 'remember_me', '1', @remember_me %>&nbsp; Remember me
+					</label>
+					<br />
+					<br />
+					<br />
+					<%= submit_tag 'Log in' %>
+				</div>
+			</div>
 
-<p><%= label_tag 'password' %><br/>
-<%= password_field_tag 'password', nil %></p>
+			<div id="aside">
+				<p class="pl2">&gt;<%= link_to "I haven\'t signed up yet", signup_path %></p>
+			</div>
+			<div id="extra">
+	
+			</div>
+		</div>
+	<% end -%>
+</div>
 
-<p><%= label_tag 'remember_me', 'Remember me' %>
-<%= check_box_tag 'remember_me', '1', @remember_me %></p>
-
-<p><%= submit_tag 'Log in' %></p>
-<% end -%>

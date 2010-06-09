@@ -3,12 +3,18 @@
 	<div class="clearfix">
 		<div class="article">
 			<table class="olt">
+				<colgroup>
+					<col class="title">
+					<col class="author">
+					<col class="count">
+					<col class="time">
+				</colgroup>
 				<tbody>
 					<tr>
 						<td>Title</td>
 						<td>Author</td>
 						<td nowrap="nowrap">Replies</td>
-						<td align="right">Last replied at</td>
+						<td align="right">Replied at</td>
 					</tr>
 					<% for post in @posts %>
 				    <tr>
