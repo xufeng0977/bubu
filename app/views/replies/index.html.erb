@@ -7,7 +7,11 @@
 		<div class="article">
 			<div class="topic-content clearfix">
 				<div class="user-face">
-					<a href="http://www.douban.com/people/vincentwin/"><%= image_tag url_for_file_column 'user', 'image', 'thumb' %></a>
+					<% if @user.image %>
+			        <a href="<%= user_path(@user.id) %>"><%= image_tag url_for_file_column 'user', 'image', 'thumb' %></a>
+					<% else %>
+					<a href="<%= user_path(@user.id) %>"><%= image_tag 'default_user.png' %></a>
+					<% end %>
 				</div>
 				<div class="topic-doc">
 					<h3>
@@ -43,7 +47,11 @@
 					@reply_user = reply.user%>
 				<li class="clearfix">
 				    <div class="user-face">
-				        <a href="http://www.douban.com/people/vincentwin/"><%= image_tag url_for_file_column 'reply_user', 'image', 'thumb' %></a>
+						<% if @reply_user.image %>
+				        <a href="<%= user_path(@reply_user.id) %>"><%= image_tag url_for_file_column 'reply_user', 'image', 'thumb' %></a>
+						<% else %>
+						<a href="<%= user_path(@reply_user.id) %>"><%= image_tag 'default_user.png' %></a>
+						<% end %>
 				    </div>
 				    <div class="reply-doc">
 				        <div class="bg-img-green">

@@ -1,9 +1,25 @@
 <div id="content">
 	<div class="clearfix">
 		<div class="article">
-			<p>user name : <%= @user.name%></p>
-			<p>email : <%= @user.email%></p>
-			<p><%= image_tag url_for_file_column 'user', 'image' %></p>
+			<div id="db-usr-profile">
+				<div class="pic">
+					<% if @user.image %>
+			        	<%= image_tag url_for_file_column 'user', 'image', 'thumb' %>
+					<% else %>
+						<%= image_tag 'default_user.png' %>
+					<% end %>
+				</div>
+				<div class="info">
+					<h1><%= @user.name%>
+						<span id="display" class="pl"></span>
+					</h1>
+					<ul>
+						<li><%= link_to 'Settings', url_for (:controller => '/settings') %></li>
+						<li><%= link_to 'Settings', url_for (:controller => '/settings') %></li>
+					</ul>
+				</div>
+			</div>
+			<br />
 			<br />
 			<h2 class="usf">User activities</h2>
 			<div class="indent">

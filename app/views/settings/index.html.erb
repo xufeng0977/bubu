@@ -34,12 +34,18 @@
 						<tr>
 							<td class="m" valign="top" align="right" style="padding: 5px;">Image: </td>
 							<td valign="top" style="padding: 5px;">
+								<% if @user.image %>
 								<div style="margin: 10px; float: left;">
 								<%= image_tag url_for_file_column 'user', 'image' %>
 								</div>
 								<div style="margin: 10px; float: left;">
 								<%= image_tag url_for_file_column 'user', 'image', 'thumb' %>
 								</div>
+								<% else %>
+								<div style="margin: 10px; float: left;">
+								<%= image_tag 'default_user.png' %>
+								</div>
+								<% end %>
 								<div style="margin: 10px; float: left;">
 								<a href="#">Change</a>
 								</div>
