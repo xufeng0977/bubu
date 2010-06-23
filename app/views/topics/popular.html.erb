@@ -1,0 +1,35 @@
+<div id="content">
+	<div class="clearfix">
+		<div class="article">
+			<h2 class="usf">By popularity:</h2>
+			<div class="indent">
+				<% for topic in @topics %>
+				<p class="pl ul">
+					<%= link_to topic.title, topic_posts_path(topic.id) %>
+				</p>
+				<% end %>
+			</div>
+			<br />
+			<br />
+			<div class="paginator">
+				<%= will_paginate @topics%>
+			</div>
+			<br />
+
+		    <%= link_to 'New topic', new_topic_path %>
+		</div>
+		<div id="aside">
+			<br />
+			<p class="pl2">&gt;<%= link_to "Hottest topics today", login_path %></p>
+			<br />
+			<p class="pl2">&gt;<%= link_to "Hottest topics this week", login_path %></p>
+			<br />
+			<p class="pl2">&gt;<%= link_to "Hottest topics this month", login_path %></p>
+			<br />
+
+		</div>
+		<div class="extra">
+			
+		</div>
+	</div>
+</div>

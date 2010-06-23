@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   def index
     @topic = Topic.find(params[:topic_id])
 
-    @posts = Post.paginate :page => params[:page], :conditions => {:topic_id => params[:topic_id]}, :order => "position", :per_page => 25
+    @posts = Post.paginate :page => params[:page], :conditions => {:topic_id => params[:topic_id]}, :order => "position", :per_page => 10
     
     @similiar_topics = Topic.find_tagged_with(@topic.tag_list, :limit => 10)
     @similiar_topics.delete(@topic)
@@ -34,6 +34,9 @@ class PostsController < ApplicationController
   def new
 #    @post = Post.new
     @post = Post.new(:topic_id => params[:topic_id])
+    @topic = Topic.find(params[:topic_id])
+    @user = current_user
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @post }

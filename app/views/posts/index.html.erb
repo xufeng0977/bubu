@@ -2,6 +2,9 @@
 <div id="content">
 	<div class="clearfix">
 		<div class="article">
+			<div style="clear: both; text-align: right; margin-bottom: 10px;">
+				<%= link_to 'New post', new_topic_post_path(@topic.id) %>
+			</div>
 			<table class="olt">
 				<colgroup>
 					<col class="title">
@@ -29,7 +32,7 @@
 			<div class="paginator">
 				<%= will_paginate @posts%>
 			</div>
-			<%= link_to 'New post', new_topic_post_path(@topic.id) %>
+			
 		</div>
 		<div id="aside">
 			<p class="p12">&gt;<%= link_to @topic.title, topic_posts_path(@topic.id) %></p>

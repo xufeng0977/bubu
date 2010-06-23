@@ -16,7 +16,7 @@
 				<div class="topic-doc">
 					<h3>
 						<span class="color-green"><%= @post.created_at.strftime("%Y-%m-%d %H:%M:%S %p")%></span>
-						<span class="pl20">created by <a href="#"><%=@user.login%></a></span>
+						<span class="pl20">created by <a href="<%= user_path(@user.id) %>"><%=@user.login%></a></span>
 					</h3>
 					<table class="infobox" width="100%">
 						<tbody>
@@ -56,7 +56,7 @@
 				    <div class="reply-doc">
 				        <div class="bg-img-green">
 				            <h4><%= reply.created_at.strftime("%Y-%m-%d %H:%M:%S %p")%>
-				                <a href="http://www.douban.com/people/vincentwin/"><%= @reply_user.login%></a> 
+				                <a href="<%= user_path(@reply_user.id) %>"><%= @reply_user.login%></a> 
 				            </h4>
 				        </div>
 				        <p><%= reply.text %></p>
@@ -67,7 +67,19 @@
 			<br />
 			<%= will_paginate @replies%>
 			<br />
-			<p><%= link_to 'New reply', new_topic_post_reply_path(@topic.id, @post.id) %></p>
+			<br />
+			<br />
+			<div style="clear: both">
+				
+			</div>
+			<h2>New Reply</h2>
+			<div class="txd">
+				<% form_for :reply, @reply, :url => {:action => "create"} do |f| %>
+				  <%= f.text_area :text, :size => '54x8' %>
+				  <br/>
+				    <%= f.submit "Reply" %>
+				<% end %>
+			</div>
 		</div>
 
 		<div id="aside">

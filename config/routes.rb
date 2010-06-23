@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :activities
+#  map.resources :activities
 
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
@@ -9,6 +9,7 @@ ActionController::Routing::Routes.draw do |map|
 #  map.settings '/settings', :controller => 'settings', :action => 'index'
   map.search '/search', :controller => 'topics', :action => 'search'
   map.simple_captcha '/simple_captcha/:action', :controller => 'simple_captcha'
+  map.explore '/explore', :controller => 'topics', :action => 'popular'
   map.resources :users do |user|
     user.resources :activities
   end

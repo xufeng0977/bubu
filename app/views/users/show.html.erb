@@ -4,7 +4,7 @@
 			<div id="db-usr-profile">
 				<div class="pic">
 					<% if @user.image %>
-			        	<%= image_tag url_for_file_column 'user', 'image', 'thumb' %>
+			        	<%= image_tag url_for_file_column 'user', 'image' %>
 					<% else %>
 						<%= image_tag 'default_user.png' %>
 					<% end %>
@@ -14,6 +14,7 @@
 						<span id="display" class="pl"></span>
 					</h1>
 					<ul>
+						<li><%= link_to 'Settings', url_for (:controller => '/settings') %></li>
 						<li><%= link_to 'Settings', url_for (:controller => '/settings') %></li>
 						<li><%= link_to 'Settings', url_for (:controller => '/settings') %></li>
 					</ul>

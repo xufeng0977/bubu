@@ -1,15 +1,45 @@
 <h1>New post</h1>
-
 <% form_for :post, @post, :url => {:action => "create"} do |f| %>
-  <%= f.error_messages %>
-  <Label for "post_title"> Title: </Label>
-  <%= f.text_field :title %> <br />
-
-  <Label for "post_text"> Text: </Label>
-  <%= f.text_area :text %> <br />
-  <p>
-    <%= f.submit "Create" %>
-  </p>
+  	<%= f.error_messages %>
+	<div id="content">
+		<div class="clearfix">
+			<div class="article">
+				<table align="center">
+					<tbody>
+						<tr>
+							<td class="pl2" width="75" align="center">Title:</td>
+							<td><%= f.text_field :title, :maxlength => '100', :size => '50' %></td>
+						</tr>
+						<tr>
+							<td valign="top" align="center">
+								<br />
+								<% if @user.image %>
+						        <a href="<%= user_path(@user.id) %>"><%= image_tag url_for_file_column 'user', 'image', 'thumb' %></a>
+								<% else %>
+								<a href="<%= user_path(@user.id) %>"><%= image_tag 'default_user.png' %></a>
+								<% end %>
+							</td>
+							<td><%= f.text_area :text, :size => '55x20' %></td>
+						</tr>
+						<tr>
+							<td ></td>
+							<td><%= f.submit "Create" %></td>
+						</tr>
+					</tbody>
+				</table>
+				<br />
+				<br />
+				<%= link_to 'Back', topic_posts_path(@post.topic_id) %>
+			</div>
+			<div id="aside">
+				<p class="p12">&gt;<%= link_to @topic.title, topic_posts_path(@topic.id) %></p>
+				
+			</div>
+			<div class="extra">
+			
+			</div>
+		</div>
+	</div>
 <% end %>
 
-<%= link_to 'Back', topic_posts_path(@post.topic_id) %>
+

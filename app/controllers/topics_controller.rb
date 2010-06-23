@@ -5,7 +5,7 @@ class TopicsController < ApplicationController
 #  protect_from_forgery :except => :search
 
   def index
-    @topics = Topic.find(:all)
+#    @topics = Topic.find(:all)
     @new_topics = Topic.find(:all, :order => 'created_at desc', :limit => 10)
     @tags = Topic.tag_counts
     @active_posts = Post.find(:all, :order => 'replied_at desc', :limit => 10)
@@ -114,6 +114,15 @@ class TopicsController < ApplicationController
     
     respond_to do |format|
       format.html # search.html.erb
+      format.xml  { render :xml => @topics }
+    end
+  end
+  
+  def popular
+    @topics = Topic.paginate :page => params[:page], :order => "posts_count desc", :per_page => 10
+    
+    respond_to do |format|
+      format.html # popular.html.erb
       format.xml  { render :xml => @topics }
     end
   end
