@@ -13,7 +13,7 @@
 			<div class="top-nav-info">
 				<% if logged_in? %>
 			        <%= h current_user.login %>
-					<%= link_to 'Settings', url_for (:controller => '/settings') %>
+					<%= link_to 'Settings', settings_path %>
 			        <%= link_to 'Logout', logout_path %>
 			    <% else %>
 			        <%= link_to 'Login', login_path %>

@@ -6,15 +6,18 @@ ActionController::Routing::Routes.draw do |map|
   map.register '/register', :controller => 'users', :action => 'create'
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.home '/', :controller => 'topics', :action => 'index'
-#  map.settings '/settings', :controller => 'settings', :action => 'index'
+  map.settings '/settings', :controller => 'users', :action => 'settings'
   map.search '/search', :controller => 'topics', :action => 'search'
   map.simple_captcha '/simple_captcha/:action', :controller => 'simple_captcha'
   map.explore '/explore', :controller => 'topics', :action => 'popular'
+  map.image '/settings/image', :controller => 'users', :action => 'image'
   map.resources :users do |user|
     user.resources :activities
   end
 
-  map.resource :session
+#  map.resource :session
+
+  map.resource :image
 
 #  map.resources :replies
 

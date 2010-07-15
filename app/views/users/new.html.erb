@@ -22,23 +22,16 @@
 					<br />
 					<span class="m">Password</span>
 					<br />
-					<%= f.text_field :password %>
+					<%= f.password_field :password %>
 					<br />
 					<span class="pl">Your password</span>
 					<br />
 					<br />
 					<span class="m">Confirm password</span>
 					<br />
-					<%= f.text_field :password_confirmation %>
+					<%= f.password_field :password_confirmation %>
 					<br />
 					<span class="pl">Confirm your password</span>
-					<br />
-					<br />
-					<span class="m">Image</span>
-					<br />
-					<%= file_column_field 'user', 'image' %>
-					<br />
-					<span class="pl">Your image</span>
 					<br />
 					<br />
 					<%= submit_tag 'Sign up' %>
