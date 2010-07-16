@@ -3,8 +3,9 @@
 		<div class="article">
 			<div id="db-usr-profile">
 				<div class="pic">
-					<% if @user.image %>
-			        	<%= image_tag url_for_file_column 'user', 'image' %>
+					<% if @user.image_id %>
+						<% image = Image.find(@user.image_id) %>
+						<%= image_tag image.public_filename %>
 					<% else %>
 						<%= image_tag 'default_user.png' %>
 					<% end %>

@@ -11,11 +11,13 @@ ActionController::Routing::Routes.draw do |map|
   map.simple_captcha '/simple_captcha/:action', :controller => 'simple_captcha'
   map.explore '/explore', :controller => 'topics', :action => 'popular'
   map.image '/settings/image', :controller => 'users', :action => 'image'
+  map.password '/settings/password', :controller => 'users', :action => 'password'
+  
   map.resources :users do |user|
     user.resources :activities
   end
 
-#  map.resource :session
+  map.resource :session
 
   map.resource :image
 
