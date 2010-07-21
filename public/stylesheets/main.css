@@ -564,5 +564,78 @@ table {
 	display: inline;
 	margin-right: 1em;
 }
+.groupicon {
+	padding-right: 10px;
+}
+.pil {
+	height: 48px;
+	width: 48px;
+}
+.cate-mod {
+	clear: both;
+	margin-bottom: 30px;
+	width: 100%;
+}
+.cate-mod .list {
+	background: url("http://t.douban.com/pics/nav/ui_b_1.png") no-repeat scroll 0 0 #F6F5F5;
+	border-bottom: medium none;
+	padding-left: 10px;
+}
+.cate-mod .list ul {
+	background: url("http://t.douban.com/pics/nav/ui_b_1.png") no-repeat scroll 100% 0 transparent;
+	height: 25px;
+}
+.cate-mod .list li.on {
+	background: url("http://t.douban.com/pics/nav/ui_b_1.png") no-repeat scroll 0 -40px #FFFFFF;
+	bottom: -1px;
+	position: relative;
+	z-index: 1;
+}
+.cate-mod .list li {
+	float: left;
+	height: 22px;
+	line-height: 23px;
+	margin-top: 3px;
+	padding-left: 4px;
+}
+.cate-mod .content {
+	border: 1px solid #EFEEED;
+	clear: both;
+	height: 630px;
+	position: relative;
+}
+.cate-mod .item {
+	left: 20px;
+	position: absolute;
+	top: 23px;
+	width: 95%;
+}
+.cate-mod .sub-item {
+	border-bottom: 1px dashed #AAAAAA;
+	float: left;
+	height: 72px;
+	margin: 0 2px 15px 0;
+	overflow: hidden;
+	width: 49%;
+}
+.cate-mod .sub-item .pic {
+	display: table-cell;
+	padding-right: 1em;
+	vertical-align: top;
+}
+.cate-mod .sub-item .pic img {
+	margin-bottom: -3px;
+}
+.cate-mod .sub-item .info {
+	color: #666666;
+	display: table-cell;
+	vertical-align: top;
+	word-wrap: break-word;
+}
+.cate-mod .sub-item p {
+	margin: 0 20px 0 0;
+}
+
+
 
 

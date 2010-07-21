@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   
   def index
     @topic = Topic.find(params[:topic_id])
+    @user = @topic.user
 
     @posts = Post.paginate :page => params[:page], :conditions => {:topic_id => params[:topic_id]}, :order => "position", :per_page => 10
     

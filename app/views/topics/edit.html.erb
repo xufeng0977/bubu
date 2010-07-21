@@ -1,12 +1,57 @@
-<h1>Editing topic</h1>
+<h1>Settings</h1>
+<% form_for(@topic, :url => { :action => "update", :id => @topic.id }) do |f| %>
+	<div id="content">
+		<div class="clearfix">
+			<div class="article">
+				<table cellpadding="5" align="center" style="clear: both;">
+					<tbody>
+						<tr>
+							<td class="m" valign="top" align="right" style="padding: 5px;">Title: </td>
+							<td valign="top" style="padding: 5px;">
+								<%= f.text_field :title , :length => 15, :maxlength => 15 %>
+								<br />
+								max length: 15 characters
+								<rb />
+							</td>
+						</tr>
+						<tr>
+							<td class="m" valign="top" align="right" style="padding: 5px;">Description: </td>
+							<td valign="top" style="padding: 5px;">
+								<%= f.text_area :description %>
+								<br />
+								max length: 30 characters
+								<rb />
+							</td>
+						</tr>
+						<tr>
+							<td class="m" valign="top" align="right" style="padding: 5px;">Image: </td>
+							<td valign="top" style="padding: 5px;">
+								<div style="margin: 10px; float: left;">
+								<%= image_tag 'default_user.png' %>
+								</div>
+								<div style="margin: 10px; float: left;">
+									<%= link_to 'Change', new_image_path %>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td style="padding: 5px;"></td>
+							<td style="padding: 5px;">
+								<%= f.submit "Update" %>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 
-<% form_for(@topic) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.submit "Update" %>
-  </p>
+			<div id="aside">
+				<p class="pl2">&gt;some title</p>
+				<br />
+			
+			</div>
+			<div id="extra">
+	
+			</div>
+		</div>
+	</div>
 <% end %>
-
-<%= link_to 'Show', @topic %> |
-<%= link_to 'Back', topics_path %>

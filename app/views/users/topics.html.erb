@@ -1,0 +1,48 @@
+<h1>Topics created by me</h1>
+<div id="content">
+	<div class="clearfix">
+		<div class="article">
+			<div id="db-groups-cate" class="cate-mod">
+				<div class="hd">
+					
+				</div>
+				<div class="bd">
+					<div class="list">
+						
+					</div>
+					<div class="content">
+						<div class="item item_0">
+							<% for topic in @topics %>
+							<div class="sub-item">
+								<div class="pic">
+									<a href="#"><img alt="<%= topic.title%>" src="/images/default_user.png"></a>
+								</div>
+								<div class="info">
+									<%= link_to topic.title, edit_topic_path(topic.id) %>
+									<p>
+										<%= h truncate(topic.description, :length => 60) %>
+									</p>
+								</div>
+							</div>
+							<% end %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="aside">
+			<p class="pl2">&gt;</p>
+			<br />
+			<h2 class="usf">Latest posts:</h2>
+			<div class="indent">
+				<p class="pl ul">
+					tttttttttttttttttt
+				</p>
+			</div>
+		</div>
+		<div class="extra">
+			
+		</div>
+	</div>
+</div>

@@ -1,0 +1,47 @@
+<h1>Upload a photo for your profile</h1>
+<% form_for(:image, :url => { :action => "create" }, :html => { :multipart => true }) do |form| %>
+	<div id="content">
+		<div class="clearfix">
+			<div class="article">
+				<table align="center">
+					<tbody>
+						<tr>
+							<td valign="top">
+								<div style="float: left; margin: 1px 18px 1px 0pt;">
+									<% if @user.image_id %>
+										<%= image_tag 'default_user.png' %>
+									<% else %>
+										<%= image_tag 'default_user.png' %>
+									<% end %>
+								</div>
+							</td>
+							<td>
+								<div class="m">Choose your favorite photo from your computer</div>
+								<br />
+								<span class="pl">You can upload JPG, JPEG, GIF, PNG or BMP file</span>
+								<br />
+								<%= form.file_field :uploaded_data %>
+							</td>
+						</tr>
+						<tr>
+							<td style="padding-top: 20px;" colspan="2">
+								<%= form.submit "Upload photo" %>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<br />
+				<%= link_to 'Back', settings_path %>
+			</div>
+
+			<div id="aside">
+				<p class="pl2">&gt;some title</p>
+				<br />
+			
+			</div>
+			<div id="extra">
+	
+			</div>
+		</div>
+	</div>
+<% end %>

@@ -12,6 +12,7 @@ ActionController::Routing::Routes.draw do |map|
   map.explore '/explore', :controller => 'topics', :action => 'popular'
   map.image '/settings/image', :controller => 'users', :action => 'image'
   map.password '/settings/password', :controller => 'users', :action => 'password'
+  map.my_topics '/settings/topics', :controller => 'users', :action => 'topics'
   
   map.resources :users do |user|
     user.resources :activities

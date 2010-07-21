@@ -21,7 +21,7 @@
 				<div class="topic-doc">
 					<h3>
 						<span class="color-green"><%= @post.created_at.strftime("%Y-%m-%d %H:%M:%S %p")%></span>
-						<span class="pl20">created by <a href="<%= user_path(@user.id) %>"><%=@user.login%></a></span>
+						<span class="pl20">created by <a href="<%= user_path(@user.id) %>"><%=@user.login%></a></span> (<%= h @user.signature%>)
 					</h3>
 					<table class="infobox" width="100%">
 						<tbody>
@@ -66,10 +66,10 @@
 				    <div class="reply-doc">
 				        <div class="bg-img-green">
 				            <h4><%= reply.created_at.strftime("%Y-%m-%d %H:%M:%S %p")%>
-				                <a href="<%= user_path(reply_user.id) %>"><%= reply_user.login%></a> 
+				                <a href="<%= user_path(reply_user.id) %>"><%= reply_user.login%></a> (<%= h @user.signature%>)
 				            </h4>
 				        </div>
-				        <p><%= reply.text %></p>
+				        <p><%= h(reply.text).gsub(/\r\n/,"<br/>") %></p>
 				    </div>
 				</li>
 				<% end %>

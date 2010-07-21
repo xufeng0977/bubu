@@ -2,7 +2,44 @@
 <div id="content">
 	<div class="clearfix">
 		<div class="article">
-			<div style="clear: both; text-align: right; margin-bottom: 10px;">
+			<table class="infobox" width="100%">
+				<tbody>
+					<tr>
+						<td class="tablelt"></td>
+						<td class="tablect"></td>
+						<td class="tablert"></td>
+					</tr>
+					<tr>
+						<td class="tablelc"></td>
+						<td class="tablecc">
+							<img class="pil groupicon" align="left" alt="<%= @topic.title%>" src="/images/default_user.png" valgin="top">
+							<p>
+								Created at <%= @topic.created_at.strftime("%m-%d %H:%M")%> by <%= link_to @user.login, user_path(@user.id) %>
+								<br />
+							</p>
+							<br />
+							<%= h(@topic.description).gsub(/\r\n/,"<br/>")%>
+							<br />
+							<div class="clearfix" style="margin-top: 10px;">
+								<span class="plr">
+									<span id="G-10064">
+										
+									</span>
+								</span>
+								
+							</div>
+						</td>
+						<td class="tablerc"></td>
+					</tr>
+					<tr>
+						<td class="tablelb"></td>
+						<td class="tablecb"></td>
+						<td class="tablerb"></td>
+					</tr>
+				</tbody>
+			</table>
+	<!--		<div style="clear: both; text-align: right; margin-bottom: 10px;"> -->
+				<div style="float: right; text-align: right; margin-bottom: 10px;">
 				<%= link_to 'New post', new_topic_post_path(@topic.id) %>
 			</div>
 			<table class="olt">
