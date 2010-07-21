@@ -93,7 +93,8 @@ class UsersController < ApplicationController
   end
   
   def topics
-    @topics = Topic.paginate :page => params[:page], :conditions => {:user_id => current_user.id}, :order => "created_at desc", :per_page => 10
+    @user = User.find(params[:id])
+    @topics = Topic.paginate :page => params[:page], :conditions => {:user_id => @user.id}, :order => "created_at desc", :per_page => 10
   end
 
 end

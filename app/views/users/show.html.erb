@@ -15,14 +15,14 @@
 						<span id="display" class="pl"></span>
 					</h1>
 					<ul>
-						<li><%= link_to 'Settings', url_for (:controller => '/settings') %></li>
-						<li><%= link_to 'Settings', url_for (:controller => '/settings') %></li>
-						<li><%= link_to 'Settings', url_for (:controller => '/settings') %></li>
+						<li><%= link_to 'Topics', url_for (:controller => 'users', :action => 'topics', :id => @user.id) %></li>
+						<li><%= link_to 'Posts', url_for (:controller => '/settings') %></li>
+						<li><%= link_to 'Replies', url_for (:controller => '/settings') %></li>
 					</ul>
 				</div>
 			</div>
 			<br />
-			<br />
+			<br />			
 			<h2 class="usf">User activities</h2>
 			<div class="indent">
 				<% for activity in @activities %>

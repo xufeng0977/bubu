@@ -1,7 +1,29 @@
-<h1>Topics created by me</h1>
+
 <div id="content">
 	<div class="clearfix">
 		<div class="article">
+			<div id="db-usr-profile">
+				<div class="pic">
+					<% if @user.image_id %>
+						<% image = Image.find(@user.image_id) %>
+						<%= image_tag image.public_filename %>
+					<% else %>
+						<%= image_tag 'default_user.png' %>
+					<% end %>
+				</div>
+				<div class="info">
+					<h1><%= @user.name%>
+						<span id="display" class="pl"></span>
+					</h1>
+					<ul>
+						<li><%= link_to 'Topics', url_for (:controller => 'users', :action => 'topics', :id => @user.id) %></li>
+						<li><%= link_to 'Posts', url_for (:controller => '/settings') %></li>
+						<li><%= link_to 'Replies', url_for (:controller => '/settings') %></li>
+					</ul>
+				</div>
+			</div>
+			<br />
+			<h2 class="usf">Topics created by me:</h2>
 			<div id="db-groups-cate" class="cate-mod">
 				<div class="hd">
 					
@@ -18,7 +40,7 @@
 									<a href="#"><img alt="<%= topic.title%>" src="/images/default_user.png"></a>
 								</div>
 								<div class="info">
-									<%= link_to topic.title, edit_topic_path(topic.id) %>
+									<%= link_to topic.title, topic_posts_path(topic.id) %>
 									<p>
 										<%= h truncate(topic.description, :length => 60) %>
 									</p>
