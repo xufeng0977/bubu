@@ -9,9 +9,12 @@ class User < ActiveRecord::Base
   include Authentication::ByCookieToken
   has_many :posts
   has_many :replies
-  has_many :topics
+#  has_many :topics
   has_many :activities
   belongs_to :image
+  
+  has_many :subscriptions
+  has_many :topics, :through => :subscriptions
 
   acts_as_paranoid
 

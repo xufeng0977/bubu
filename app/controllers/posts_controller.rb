@@ -63,6 +63,9 @@ class PostsController < ApplicationController
       if @post.save
         @post.move_to_top
         topic = @post.topic
+        unless Subscription.find (:first, :conditions => {:user_id => current_user.id, :topic_id => topic.id})
+          current_user.topics << topic
+        end
         topic.posts_count += 1
         topic.save
         create_activity current_user.id, "Post", @post.id
