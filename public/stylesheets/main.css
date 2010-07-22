@@ -635,7 +635,58 @@ table {
 .cate-mod .sub-item p {
 	margin: 0 20px 0 0;
 }
-
+.obu {
+	display: inline;
+	float: left;
+	margin: 0 0 10px;
+	width: 76px;
+}
+.obu dt {
+	height: 50px;
+	line-height: 16px;
+	margin: 0;
+	overflow: hidden;
+	text-align: center;
+}
+.obu dd {
+	height: 55px;
+	margin: 0;
+	overflow: hidden;
+	text-align: center;
+}
+.zbar {
+	background: url("http://t.douban.com/pics/zbar.gif") no-repeat scroll 0 0 transparent;
+	margin-bottom: 21px;
+}
+.zbar div {
+	background: url("http://t.douban.com/pics/zbar.gif") no-repeat scroll right top transparent;
+	float: left;
+	margin-left: 5px;
+	padding-left: 2px;
+}
+.zbar span.now {
+	background: url("http://t.douban.com/pics/wztab.gif") no-repeat scroll right top transparent;
+	display: block;
+	float: left;
+	margin: 0 5px;
+	padding: 0 10px 0 0;
+}
+.zbar span.now span {
+	background: url("http://t.douban.com/pics/wztab.gif") no-repeat scroll 0 0 transparent;
+	display: block;
+	padding: 6px 1px 5px 11px;
+}
+.zbar a {
+	display: block;
+	float: left;
+	line-height: 14px;
+	margin: 5px 5px 1px;
+	padding: 3px 5px 2px;
+	text-decoration: none;
+}
+.paginator {
+	text-align: center;
+}
 
 
 

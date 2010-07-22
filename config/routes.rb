@@ -13,6 +13,9 @@ ActionController::Routing::Routes.draw do |map|
   map.image '/settings/image', :controller => 'users', :action => 'image'
   map.password '/settings/password', :controller => 'users', :action => 'password'
   map.my_topics '/settings/topics', :controller => 'users', :action => 'topics'
+  map.myhome '/myhome', :controller => 'users', :action => 'myhome'
+  map.my_posts '/myhome/my_posts', :controller => 'users', :action => 'myposts'
+  map.my_replies '/myhome/my_replies', :controller => 'users', :action => 'myreplies'
   
   map.resources :users do |user|
     user.resources :activities

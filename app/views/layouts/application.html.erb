@@ -49,7 +49,9 @@
 				</div>
 				<div class="site-nav-items">
 					<ul>
-						<li><%= link_to 'My home', user_path(1) %></li>
+						<% if logged_in? %>
+						<li><%= link_to 'My home', myhome_path %></li>
+						<% end %>
 						<li><%= link_to 'Explore', explore_path %></li>
 					</ul>
 				</div>

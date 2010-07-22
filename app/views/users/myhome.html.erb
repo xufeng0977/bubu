@@ -1,0 +1,62 @@
+<h1>My favorite topics:</h1>
+<div id="content">
+	<div class="clearfix">
+		<div class="article">
+			<div class="clear"></div>
+			<div class="zbar clearfix">
+				<div>
+					<span class="now">
+						<span>Latest updates</span>
+					</span>
+					<%= link_to 'My posts', my_posts_path %>
+					<%= link_to 'My replies', my_replies_path %>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<br />
+			<table class="olt">
+				<colgroup>
+					<col class="title">
+					<col class="author">
+					<col class="topic">
+					<col class="time">
+				</colgroup>
+				<tbody>
+					<tr>
+						<td>Title</td>
+						<td>Author</td>
+						<td nowrap="nowrap">Topic</td>
+						<td align="right">Replied at</td>
+					</tr>
+					<% for post in @posts 
+							topic = post.topic
+							user = post.user%>
+				    <tr>
+				        <td><%= link_to post.title, topic_post_replies_path(topic.id, post.id) %></td>
+						<td nowrap="nowrap"><%= link_to user.login, user_path(user.id) %></td>
+						<td ><%= link_to topic.title, topic_posts_path(topic.id) %></td>
+				        <td class="time" nowrap="nowrap"><%= post.replied_at.strftime("%m-%d %H:%M")%></td> 
+				    </tr>
+				    <% end %>
+				</tbody>
+			</table>	
+			<div class="paginator">
+				<%= will_paginate @posts%>
+			</div>
+		</div>
+
+		<div id="aside">
+			<p class="pl2">&gt;</p>
+			<br />
+			<h2 class="usf">Latest posts:</h2>
+			<div class="indent">
+				<p class="pl ul">
+					tttttttttttttttttt
+				</p>
+			</div>
+		</div>
+		<div class="extra">
+			
+		</div>
+	</div>
+</div>

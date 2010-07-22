@@ -13,16 +13,9 @@
 						<tr>
 							<td valign="top" align="center">
 								<br />
-								<% if @user.image_id %>
-								<% image = Image.find(@user.image_id) %>
 								<a href="<%= user_path(@user.id) %>">
-								<%= image_tag image.public_filename(:thumb) %>
+								<%= image_tag user_image(@user) %>
 								</a>
-								<% else %>
-								<a href="<%= user_path(@user.id) %>">
-								<%= image_tag 'default_user.png' %>
-								</a>
-								<% end %>
 							</td>
 							<td><%= f.text_area :text, :size => '55x20' %></td>
 						</tr>

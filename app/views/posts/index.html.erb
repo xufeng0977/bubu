@@ -75,6 +75,24 @@
 			<p class="p12">&gt;<%= link_to @topic.title, topic_posts_path(@topic.id) %></p>
 			<br />
 			<br />
+			<h2>Users following this topic:</h2>
+			<% for user in @sub_users %>
+				<dl class="obu">
+					<dt>
+						<a class="nbg" href="<%= user_path(user.id) %>">
+							<%= image_tag user_image(user), :class => "m_sub_img" %>
+						</a>
+					</dt>
+					<dd>
+						<a href="<%= user_path(user.id) %>"><%= user.name %></a>
+						<br />
+					</dd>
+				</dl>
+			<% end %>
+			<br clear="all" />
+			<p class="pl2">
+				&gt;<a href=""> View all users </a>
+			</p>
 			<% unless @similiar_topics.empty? %>
 			<h2 class="usf">Related topics:</h2>
 			<div class="indent">

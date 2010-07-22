@@ -9,6 +9,8 @@ class PostsController < ApplicationController
 
     @posts = Post.paginate :page => params[:page], :conditions => {:topic_id => params[:topic_id]}, :order => "position", :per_page => 10
     
+    @sub_users = @topic.users.find(:all, :limit => 8, :order => 'created_at desc')
+    
     @similiar_topics = Topic.find_tagged_with(@topic.tag_list, :limit => 10)
     @similiar_topics.delete(@topic)
     

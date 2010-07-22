@@ -96,5 +96,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @topics = Topic.paginate :page => params[:page], :conditions => {:user_id => @user.id}, :order => "created_at desc", :per_page => 10
   end
+  
+  def myhome
+    @posts = Post.paginate_by_sql(["select * from posts where topic_id in (select topic_id from subscriptions where user_id = ? ) order by replied_at desc", current_user.id], :page => params[:page], :per_page => 10)
+  end
 
 end
