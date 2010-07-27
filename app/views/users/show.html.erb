@@ -30,18 +30,18 @@
 				<%	case activity.record_type
 					when "Topic"
 						topic = Topic.find(activity.record_id) %>
-					<%= activity.created_at.strftime("%Y-%m-%d %H:%M") %> created Topic : <%= link_to topic.title, topic_posts_path(topic.id)%> 
+					<%= activity.created_at.strftime("%m-%d %H:%M") %> created Topic : <%= link_to topic.title, topic_posts_path(topic.id)%> 
 					<%
 					when "Post"
 						post = Post.find(activity.record_id)
 						topic = post.topic %>
-					<%= activity.created_at.strftime("%Y-%m-%d %H:%M") %> created Post : <%= link_to post.title, topic_post_replies_path(topic.id, post.id)%> under Topic : <%= link_to topic.title, topic_posts_path(topic.id)%>	
+					<%= activity.created_at.strftime("%m-%d %H:%M") %> created Post : <%= link_to post.title, topic_post_replies_path(topic.id, post.id)%> under Topic : <%= link_to topic.title, topic_posts_path(topic.id)%>	
 					<%
 					when "Reply"
 						reply = Reply.find(activity.record_id) 
 						post = reply.post
 						topic = post.topic %>
-					<%= activity.created_at.strftime("%Y-%m-%d %H:%M") %> replied to Post : <%= link_to post.title, topic_post_replies_path(topic.id, post.id)%> under Topic : <%= link_to topic.title, topic_posts_path(topic.id)%>		
+					<%= activity.created_at.strftime("%m-%d %H:%M") %> replied to Post : <%= link_to post.title, topic_post_replies_path(topic.id, post.id)%> under Topic : <%= link_to topic.title, topic_posts_path(topic.id)%>		
 					<%
 					end%>
 				</p>
@@ -63,10 +63,11 @@
 				<br />
 				<% end %>
 			<% end %>
+			
 			<br clear="all" />
-			<% unless @followers.empty? %>
-				<h2>Peoples following <%= @user.name %>:</h2>
-				<% for user in @followers %>
+			<% unless @followees.empty? %>
+				<h2>Peoples that <%= @user.name %> is following:</h2>
+				<% for user in @followees %>
 					<dl class="obu">
 						<dt>
 							<a class="nbg" href="<%= user_path(user.id) %>">
@@ -81,9 +82,9 @@
 				<% end %>
 			<% end %>
 			<br clear="all" />
-			<% unless @followees.empty? %>
-				<h2>Peoples that <%= @user.name %> is following:</h2>
-				<% for user in @followees %>
+			<% unless @followers.empty? %>
+				<h2>Peoples that are following <%= @user.name %>:</h2>
+				<% for user in @followers %>
 					<dl class="obu">
 						<dt>
 							<a class="nbg" href="<%= user_path(user.id) %>">

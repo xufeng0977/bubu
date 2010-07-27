@@ -112,7 +112,14 @@ class UsersController < ApplicationController
   end
   
   def myhome
-    @posts = Post.paginate_by_sql(["select * from posts where topic_id in (select topic_id from subscriptions where user_id = ? ) order by replied_at desc", current_user.id], :page => params[:page], :per_page => 10)
+#    @posts = Post.paginate_by_sql(["select * from posts where topic_id in (select topic_id from subscriptions where user_id = ? ) order by replied_at desc", current_user.id], :page => params[:page], :per_page => 10)
+#    @activities = Activity.paginate :page => params[:page], :conditions => {:user_id => @user.id}, :order => "created_at desc", :per_page => 25
+    @posts = Post.find_by_sql(["select * from posts where topic_id in (select topic_id from subscriptions where user_id = ? ) order by replied_at desc limit 15", current_user.id])
+    @activities = Activity.find_by_sql(["select * from activities where user_id in (select friend_id from contacts where my_id = ? ) order by created_at desc limit 15", current_user.id])
+#    @activities = Activity.paginate :page => params[:page], :conditions => {:user_id => @user.id}, :order => "created_at desc", :per_page => 25
+    @followers = current_user.followers.find(:all, :limit => '8', :order => 'created_at desc')
+    @followees = current_user.followees.find(:all, :limit => '8', :order => 'created_at desc')
+    @topics = current_user.topics.find(:all, :limit => '8', :order => 'created_at desc')
   end
   
   def follow

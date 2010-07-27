@@ -12,8 +12,36 @@
 					<%= link_to 'My replies', my_replies_path %>
 				</div>
 			</div>
+			<br clear="all" />
+			<h2 class="usf">From your favorite peoples</h2>
+			<div class="indent">
+				<% for activity in @activities %>
+				<%     user = activity.user %>
+				<p class="pl ul">
+				<%	case activity.record_type
+					when "Topic"
+						topic = Topic.find(activity.record_id) %>
+					<%= activity.created_at.strftime("%m-%d %H:%M") %> <%= link_to user.name, user_path(user.id) %> created Topic : <%= link_to topic.title, topic_posts_path(topic.id)%> 
+					<%
+					when "Post"
+						post = Post.find(activity.record_id)
+						topic = post.topic %>
+					<%= activity.created_at.strftime("%m-%d %H:%M") %> <%= link_to user.name, user_path(user.id) %> created Post : <%= link_to post.title, topic_post_replies_path(topic.id, post.id)%> under Topic : <%= link_to topic.title, topic_posts_path(topic.id)%>	
+					<%
+					when "Reply"
+						reply = Reply.find(activity.record_id) 
+						post = reply.post
+						topic = post.topic %>
+					<%= activity.created_at.strftime("%m-%d %H:%M") %> <%= link_to user.name, user_path(user.id) %> replied to Post : <%= link_to post.title, topic_post_replies_path(topic.id, post.id)%> under Topic : <%= link_to topic.title, topic_posts_path(topic.id)%>		
+					<%
+					end%>
+				</p>
+				<% end %>
+			</div>
 			<div class="clear"></div>
-			<br />
+			<br clear="all" />
+			<br clear="all" />
+			<h2 class="usf">From your favorite topics</h2>
 			<table class="olt">
 				<colgroup>
 					<col class="title">
@@ -41,19 +69,64 @@
 				</tbody>
 			</table>	
 			<div class="paginator">
-				<%= will_paginate @posts%>
-			</div>
+				
+			</div> 
 		</div>
 
 		<div id="aside">
 			<p class="pl2">&gt;</p>
-			<br />
-			<h2 class="usf">Latest posts:</h2>
-			<div class="indent">
-				<p class="pl ul">
-					tttttttttttttttttt
-				</p>
-			</div>
+			
+			<br clear="all" />
+			<% unless @followees.empty? %>
+				<h2>Peoples that you are following:</h2>
+				<% for user in @followees %>
+					<dl class="obu">
+						<dt>
+							<a class="nbg" href="<%= user_path(user.id) %>">
+								<%= image_tag user_image(user), :class => "m_sub_img" %>
+							</a>
+						</dt>
+						<dd>
+							<a href="<%= user_path(user.id) %>"><%= user.name %></a>
+							<br />
+						</dd>
+					</dl>
+				<% end %>
+			<% end %>
+			<br clear="all" />
+			<% unless @followers.empty? %>
+				<h2>Peoples that are following you:</h2>
+				<% for user in @followers %>
+					<dl class="obu">
+						<dt>
+							<a class="nbg" href="<%= user_path(user.id) %>">
+								<%= image_tag user_image(user), :class => "m_sub_img" %>
+							</a>
+						</dt>
+						<dd>
+							<a href="<%= user_path(user.id) %>"><%= user.name %></a>
+							<br />
+						</dd>
+					</dl>
+				<% end %>
+			<% end %>
+			<br clear="all" />
+			<% unless @topics.empty? %>
+				<h2>Topics that you are following:</h2>
+				<div class="evt_short">
+					<ul>
+				<% for topic in @topics %>
+						<li class="actfromfri">
+							<div class="pl">
+								<%= link_to topic.title, topic_posts_path(topic.id), :class => 'pl2' %>
+								<br />
+								<%= h truncate(topic.description, :length => 60) %>
+							</div>
+						</li>
+				<% end %>
+					</ul>
+				</div>
+			<% end %>
 		</div>
 		<div class="extra">
 			
