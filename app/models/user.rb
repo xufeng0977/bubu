@@ -15,6 +15,13 @@ class User < ActiveRecord::Base
   
   has_many :subscriptions
   has_many :topics, :through => :subscriptions
+  
+  has_many :followed_users, :class_name => 'Contact', :foreign_key => 'friend_id'
+  has_many :following_users, :class_name => 'Contact', :foreign_key => 'my_id'
+  
+  has_many :followees, :through => :following_users
+  
+  has_many :followers, :through => :followed_users
 
   acts_as_paranoid
 

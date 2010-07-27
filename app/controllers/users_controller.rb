@@ -29,6 +29,20 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @activities = Activity.paginate :page => params[:page], :conditions => {:user_id => @user.id}, :order => "created_at desc", :per_page => 25
+    @can_follow = 'Y'
+    if current_user.id == @user.id
+      @can_follow = ' '
+    else
+      contacts = Contact.find_by_sql(['select * from contacts where my_id = ? and friend_id = ?', current_user.id, @user.id])
+      if contacts.empty?
+        @can_follow = 'Y'
+      else
+        @can_follow = 'N'
+      end
+    end
+    @followers = @user.followers.find(:all, :limit => '8', :order => 'created_at desc')
+    @followees = @user.followees.find(:all, :limit => '8', :order => 'created_at desc')
+    @topics = @user.topics.find(:all, :limit => '8', :order => 'created_at desc')
   end
   
   def settings
@@ -100,5 +114,22 @@ class UsersController < ApplicationController
   def myhome
     @posts = Post.paginate_by_sql(["select * from posts where topic_id in (select topic_id from subscriptions where user_id = ? ) order by replied_at desc", current_user.id], :page => params[:page], :per_page => 10)
   end
-
+  
+  def follow
+    user = User.find(params[:id])
+    current_user.followees << user
+    respond_to do |format|
+      format.html { redirect_to url_for (:action => "show", :id => params[:id]) }
+      format.xml  { head :ok }
+    end
+  end
+  
+  def unfollow
+    user = User.find(params[:id])
+    current_user.followees.delete(user)
+    respond_to do |format|
+      format.html { redirect_to url_for (:action => "show", :id => params[:id]) }
+      format.xml  { head :ok }
+    end
+  end
 end

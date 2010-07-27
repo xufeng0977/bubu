@@ -11,6 +11,14 @@ class PostsController < ApplicationController
     
     @sub_users = @topic.users.find(:all, :limit => 8, :order => 'created_at desc')
     
+    subscriptions = Subscription.find_by_sql(['select * from subscriptions where user_id = ? and topic_id = ?', current_user.id, @topic.id])
+    @can_follow = 'Y'
+    if subscriptions.empty?
+      @can_follow = 'Y'
+    else
+      @can_follow = 'N'
+    end
+    
     @similiar_topics = Topic.find_tagged_with(@topic.tag_list, :limit => 10)
     @similiar_topics.delete(@topic)
     

@@ -126,4 +126,22 @@ class TopicsController < ApplicationController
       format.xml  { render :xml => @topics }
     end
   end
+  
+  def follow
+    topic = Topic.find(params[:id])
+    current_user.topics << topic
+    respond_to do |format|
+      format.html { redirect_to topic_posts_path(topic.id) }
+      format.xml  { head :ok }
+    end
+  end
+  
+  def unfollow
+    topic = Topic.find(params[:id])
+    current_user.topics.delete(topic)
+    respond_to do |format|
+      format.html { redirect_to topic_posts_path(topic.id) }
+      format.xml  { head :ok }
+    end
+  end
 end

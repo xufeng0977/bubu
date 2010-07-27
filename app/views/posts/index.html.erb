@@ -74,20 +74,33 @@
 		<div id="aside">
 			<p class="p12">&gt;<%= link_to @topic.title, topic_posts_path(@topic.id) %></p>
 			<br />
+			<% if @can_follow == 'Y' %>
+				<br />
+				<p class="pl2">&gt;<%= link_to "Follow this topic", url_for (:controller => 'topics', :action => 'follow', :id => @topic.id) %></p>
+			<% else
+				if @can_follow == 'N' %>
+				<br />
+				<p class="pl2">&gt;<%= link_to "Unfollow this topic", url_for (:controller => 'topics', :action => 'unfollow', :id => @topic.id) %></p>
+				<% else %>
+				<br />
+				<% end %>
+			<% end %>
 			<br />
-			<h2>Users following this topic:</h2>
-			<% for user in @sub_users %>
-				<dl class="obu">
-					<dt>
-						<a class="nbg" href="<%= user_path(user.id) %>">
-							<%= image_tag user_image(user), :class => "m_sub_img" %>
-						</a>
-					</dt>
-					<dd>
-						<a href="<%= user_path(user.id) %>"><%= user.name %></a>
-						<br />
-					</dd>
-				</dl>
+			<% unless @sub_users.empty? %>
+				<h2>Users following this topic:</h2>
+				<% for user in @sub_users %>
+					<dl class="obu">
+						<dt>
+							<a class="nbg" href="<%= user_path(user.id) %>">
+								<%= image_tag user_image(user), :class => "m_sub_img" %>
+							</a>
+						</dt>
+						<dd>
+							<a href="<%= user_path(user.id) %>"><%= user.name %></a>
+							<br />
+						</dd>
+					</dl>
+				<% end %>
 			<% end %>
 			<br clear="all" />
 			<p class="pl2">

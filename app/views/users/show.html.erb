@@ -52,12 +52,69 @@
 		<div id="aside">
 			<p class="pl2">&gt;</p>
 			<br />
-			<h2 class="usf">Latest posts:</h2>
-			<div class="indent">
-				<p class="pl ul">
-					tttttttttttttttttt
-				</p>
-			</div>
+			<% if @can_follow == 'Y' %>
+				<br />
+				<p class="pl2">&gt;<%= link_to "Follow this user", url_for (:controller => 'users', :action => 'follow', :id => @user.id) %></p>
+			<% else
+				if @can_follow == 'N' %>
+				<br />
+				<p class="pl2">&gt;<%= link_to "Unfollow this user", url_for (:controller => 'users', :action => 'unfollow', :id => @user.id) %></p>
+				<% else %>
+				<br />
+				<% end %>
+			<% end %>
+			<br clear="all" />
+			<% unless @followers.empty? %>
+				<h2>Peoples following <%= @user.name %>:</h2>
+				<% for user in @followers %>
+					<dl class="obu">
+						<dt>
+							<a class="nbg" href="<%= user_path(user.id) %>">
+								<%= image_tag user_image(user), :class => "m_sub_img" %>
+							</a>
+						</dt>
+						<dd>
+							<a href="<%= user_path(user.id) %>"><%= user.name %></a>
+							<br />
+						</dd>
+					</dl>
+				<% end %>
+			<% end %>
+			<br clear="all" />
+			<% unless @followees.empty? %>
+				<h2>Peoples that <%= @user.name %> is following:</h2>
+				<% for user in @followees %>
+					<dl class="obu">
+						<dt>
+							<a class="nbg" href="<%= user_path(user.id) %>">
+								<%= image_tag user_image(user), :class => "m_sub_img" %>
+							</a>
+						</dt>
+						<dd>
+							<a href="<%= user_path(user.id) %>"><%= user.name %></a>
+							<br />
+						</dd>
+					</dl>
+				<% end %>
+			<% end %>
+			<br clear="all" />
+			<% unless @topics.empty? %>
+				<h2>Topics that <%= @user.name %> is following:</h2>
+				<div class="evt_short">
+					<ul>
+				<% for topic in @topics %>
+						<li class="actfromfri">
+							<div class="pl">
+								<%= link_to topic.title, topic_posts_path(topic.id), :class => 'pl2' %>
+								<br />
+								<%= h truncate(topic.description, :length => 60) %>
+							</div>
+						</li>
+				<% end %>
+					</ul>
+				</div>
+			<% end %>
+			
 		</div>
 		<div class="extra">
 			

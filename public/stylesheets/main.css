@@ -687,6 +687,17 @@ table {
 .paginator {
 	text-align: center;
 }
+.evt_short {
+	float: left;
+	margin-bottom: 10px;
+	width: 100%;
+}
+.evt_short li {
+	line-height: 1.6em;
+}
+.actfromfri {
+	padding: 0.6em 0;
+}
 
 
 
